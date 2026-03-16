@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trung du và Miền núi phía Bắc</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* RESET */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #f4f6f8;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: #0f5d48;
+        padding: 14px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      nav .logo {
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #ffd166;
+      }
+
+      /* HEADER */
+
+      header {
+        background: linear-gradient(135deg, #0f5d48, #1b7a5e);
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        border-radius: 0 0 40px 40px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        font-size: 38px;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 17px;
+        opacity: 0.9;
+      }
+
+      /* SLIDER */
+
+      .slider {
+        width: 100%;
+        height: 60vh;
+        min-height: 350px;
+        overflow: hidden;
+      }
+
+      .slides {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: 1s;
+      }
+
+      .slide.active {
+        opacity: 1;
+      }
+
+      /* SECTION */
+
+      section {
+        padding: 70px 8%;
+        width: 100%;
+        max-width: 1400px;
+        margin: auto;
+      }
+
+      h2 {
+        font-size: 30px;
+        color: #0f5d48;
+        margin-bottom: 25px;
+        font-weight: 700;
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        width: 70px;
+        height: 4px;
+        background: #0f5d48;
+        display: block;
+        margin-top: 6px;
+        border-radius: 5px;
+      }
+
+      /* INTRO */
+
+      .intro {
+        background: white;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        line-height: 1.7;
+        transition: 0.3s;
+      }
+
+      .intro:hover {
+        transform: translateY(-5px);
+      }
+
+      /* CARDS */
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        transition: 0.35s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card h3 {
+        padding: 15px 18px 5px;
+        color: #0f5d48;
+        font-size: 20px;
+      }
+
+      .card p {
+        padding: 0 18px 20px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* GALLERY */
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 14px;
+        transition: 0.3s;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery img:hover {
+        transform: scale(1.08);
+      }
+
+      /* MAP */
+
+      .map img {
+        width: 100%;
+        border-radius: 18px;
+        margin-top: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      /* TABLE */
+
+      .table-box {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+      }
+
+      thead {
+        background: #0f5d48;
+        color: white;
+      }
+
+      th {
+        padding: 16px;
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+      }
+
+      tbody tr {
+        transition: 0.3s;
+      }
+
+      tbody tr:hover {
+        background: #f2f7f5;
+        transform: scale(1.01);
+      }
+
+      td a {
+        color: #1a73e8;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      td a:hover {
+        text-decoration: underline;
+      }
+
+      /* SCROLL ANIMATION */
+
+      .hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+
+      .show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* BACK TO TOP */
+
+      #topBtn {
+        position: fixed;
+        bottom: 35px;
+        right: 35px;
+        background: #0f5d48;
+        color: white;
+        border: none;
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-size: 18px;
+        cursor: pointer;
+        display: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: 0.3s;
+      }
+
+      #topBtn:hover {
+        background: #1b7a5e;
+        transform: translateY(-3px);
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: linear-gradient(135deg, #0f5d48, #1b7a5e);
+        color: white;
+        text-align: center;
+        padding: 30px;
+        margin-top: 80px;
+        border-radius: 40px 40px 0 0;
+        box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 768px) {
+        nav ul {
+          gap: 15px;
+        }
+
+        header h1 {
+          font-size: 28px;
+        }
+
+        .slider {
+          height: 40vh;
+        }
+
+        section {
+          padding: 50px 6%;
+        }
+
+        .card img {
+          height: 180px;
+        }
+
+        .gallery img {
+          height: 150px;
+        }
+      }
+      nav .logo a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      nav .logo a:hover {
+        color: #ffd166;
+      }
+      nav ul li:first-child a {
+        background: #ffd166;
+        color: #0f5d48;
+        padding: 6px 12px;
+        border-radius: 6px;
+      }
+
+      nav ul li:first-child a:hover {
+        background: white;
+      }
+      header {
+        background: linear-gradient(135deg, #0f5d48, #1b7a5e);
+        color: white;
+        padding: 80px 20px 70px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+
+      header p {
+        font-size: 18px;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: auto;
+      }
+      /* IMAGE VIEWER */
+
+      #viewer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 3000;
+      }
+
+      #zoomArea {
+        overflow: hidden;
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      #viewer img {
+        width: auto;
+        max-width: 100%;
+        transition: transform 0.2s;
+        cursor: grab;
+      }
+
+      #close {
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="logo">
+        <a href="trangchinh.html">Du lịch Việt Nam</a>
+      </div>
+
+      <ul>
+        <li><a href="trangchinh.html">Trang chủ</a></li>
+        <li><a href="#gioithieu">Giới thiệu</a></li>
+        <li><a href="#diadiem">Địa điểm</a></li>
+        <li><a href="#gallery">Thư viện</a></li>
+        <li><a href="#map">Bản đồ</a></li>
+      </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+      <h1>Trung du và Miền núi phía Bắc</h1>
+      <p>Vùng đất hùng vĩ với thiên nhiên và văn hóa đặc sắc</p>
+    </header>
+    <section>
+      <h2>Giới thiệu</h2>
+
+      <div class="intro">
+        <p>
+          Trung du và miền núi phía Bắc là vùng lãnh thổ rộng lớn nằm ở phía Bắc
+          Việt Nam. Nơi đây nổi tiếng với địa hình núi cao, khí hậu mát mẻ và
+          nhiều cảnh quan thiên nhiên hùng vĩ. Đây cũng là nơi sinh sống của
+          nhiều dân tộc thiểu số như Tày, Nùng, H’Mông, Dao với những nét văn
+          hóa độc đáo.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Các tỉnh trong vùng</h2>
+      <div class="intro">
+        <p>
+          Vùng này gồm các tỉnh: Cao Bằng, Lào Cai, Lạng Sơn, Tuyên Quang, Thái
+          Nguyên, Phú Thọ, Sơn La, Điện Biên và Lai Châu.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img
+            src="trungdumiennuiphiabac-9tinh(thieu3)/dinhphansifan.jpg"
+            alt="https://www.traveloka.com/vi-vn/explore/destination/dinh-fansipan/449470"
+          />
+
+          <h3>Đỉnh Fansipan</h3>
+
+          <p>
+            Được mệnh danh là “nóc nhà Đông Dương”, Fansipan cao 3143m nằm ở
+            tỉnh Lào Cai và là điểm du lịch nổi tiếng của vùng.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="trungdumiennuiphiabac-9tinh(thieu3)/cao-nguyen-da-dong-van-13.jpg"
+            alt="https://www.vietnambooking.com/du-lich/blog-du-lich/cao-nguyen-da-dong-van.html"
+          />
+
+          <h3>Cao nguyên đá Đồng Văn</h3>
+
+          <p>
+            Cao nguyên đá Đồng Văn (Hà Giang) là công viên địa chất toàn cầu với
+            phong cảnh núi đá hùng vĩ và văn hóa dân tộc đặc sắc.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="trungdumiennuiphiabac-9tinh(thieu3)/mu-cang-chai-mua-lua-chin-1024x538.jpeg"
+            alt="https://phuotvivu.com/blog/kham-pha-mu-cang-chai-ruong-bac-thang-dep-nhat-the-gioi/"
+          />
+
+          <h3>Ruộng bậc thang Mù Cang Chải</h3>
+
+          <p>
+            Những thửa ruộng bậc thang tuyệt đẹp tại Yên Bái được xem là một
+            trong những cảnh quan đặc trưng của miền núi phía Bắc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Thư viện ảnh vùng núi</h2>
+
+      <div class="gallery">
+        <img src="trungdumiennuiphiabac-9tinh(thieu3)/vd1.jpg" />
+
+        <img src="trungdumiennuiphiabac-9tinh(thieu3)/vd2.jpg" />
+
+        <img src="trungdumiennuiphiabac-9tinh(thieu3)/vd3.jpg" />
+
+        <img src="trungdumiennuiphiabac-9tinh(thieu3)/vd4.jpg" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Bản đồ khu vực</h2>
+
+      <div class="map">
+        <img
+          src="trungdumiennuiphiabac-9tinh(thieu3)/z7584428329471_80fc6619df74adb9e1ebb8f868c27ebc.jpg"
+          id="mapImg"
+        />
+      </div>
+
+      <!-- khung xem ảnh -->
+      <div id="viewer">
+        <span id="close">&times;</span>
+        <img id="viewerImg" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Các tỉnh trong vùng</h2>
+
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Tỉnh/Thành</th>
+              <th>Diện tích (km²)</th>
+              <th>Dân số</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a href="caobang.html">Cao Bằng</a></td>
+              <td>6.700 km²</td>
+              <td>0.5 triệu</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td><a href="laocai.html">Lào Cai</a></td>
+              <td>6.364 km²</td>
+              <td>0.8 triệu</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td><a href="langson.html">Lạng Sơn</a></td>
+              <td>8.310 km²</td>
+              <td>0.8 triệu</td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+              <td><a href="tuyenquang.html">Tuyên Quang</a></td>
+              <td>5.868 km²</td>
+              <td>0.8 triệu</td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td><a href="thainguyen.html">Thái Nguyên</a></td>
+              <td>3.526 km²</td>
+              <td>1.3 triệu</td>
+            </tr>
+
+            <tr>
+              <td>6</td>
+              <td><a href="phutho.html">Phú Thọ</a></td>
+              <td>3.535 km²</td>
+              <td>1.5 triệu</td>
+            </tr>
+
+            <tr>
+              <td>7</td>
+              <td><a href="sonla.html">Sơn La</a></td>
+              <td>14.174 km²</td>
+              <td>1.3 triệu</td>
+            </tr>
+
+            <tr>
+              <td>8</td>
+              <td><a href="dienbien.html">Điện Biên</a></td>
+              <td>9.562 km²</td>
+              <td>0.6 triệu</td>
+            </tr>
+
+            <tr>
+              <td>9</td>
+              <td><a href="laichau.html">Lai Châu</a></td>
+              <td>9.068 km²</td>
+              <td>0.5 triệu</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Website giới thiệu các vùng của Việt Nam</p>
+    </footer>
+
+    <button id="topBtn">↑</button>
+
+    <script>
+      /* slider */
+
+      let slides = document.querySelectorAll(".slide");
+      let index = 0;
+
+      setInterval(() => {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+      }, 4000);
+
+      /* scroll animation */
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+
+      document.querySelectorAll("section").forEach((el) => {
+        el.classList.add("hidden");
+        observer.observe(el);
+      });
+
+      /* back to top */
+
+      let btn = document.getElementById("topBtn");
+
+      window.onscroll = function () {
+        if (document.documentElement.scrollTop > 300) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      };
+
+      btn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+      const mapImg = document.getElementById("mapImg");
+      const viewer = document.getElementById("viewer");
+      const viewerImg = document.getElementById("viewerImg");
+      const closeBtn = document.getElementById("close");
+
+      let scale = 1;
+      let posX = 0;
+      let posY = 0;
+      let startX, startY;
+
+      mapImg.onclick = () => {
+        viewer.style.display = "flex";
+        viewerImg.src = mapImg.src;
+      };
+
+      closeBtn.onclick = () => {
+        viewer.style.display = "none";
+        scale = 1;
+        posX = 0;
+        posY = 0;
+        viewerImg.style.transform = "scale(1)";
+      };
+
+      /* zoom chuột */
+
+      viewer.addEventListener("wheel", (e) => {
+        e.preventDefault();
+
+        if (e.deltaY < 0) {
+          scale += 0.1;
+        } else {
+          scale -= 0.1;
+        }
+
+        if (scale < 1) scale = 1;
+        if (scale > 5) scale = 5;
+
+        viewerImg.style.transform = `translate(${posX}px,${posY}px) scale(${scale})`;
+      });
+
+      /* kéo ảnh */
+
+      viewerImg.onmousedown = (e) => {
+        startX = e.clientX - posX;
+        startY = e.clientY - posY;
+
+        document.onmousemove = (e) => {
+          posX = e.clientX - startX;
+          posY = e.clientY - startY;
+
+          viewerImg.style.transform = `translate(${posX}px,${posY}px) scale(${scale})`;
+        };
+
+        document.onmouseup = () => {
+          document.onmousemove = null;
+        };
+      };
+    </script>
+    <script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khám Phá Việt Nam</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        line-height: 1.6;
+      }
+
+      /* LOADING SCREEN */
+
+      #loader {
+        position: fixed;
+        inset: 0;
+        background: #0f2027;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 2000;
+        transition: opacity 0.6s ease;
+      }
+
+      .spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid rgba(255, 255, 255, 0.2);
+        border-top: 6px solid #00c6ff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      #loader p {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #ccc;
+      }
+
+      header {
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header h2 {
+        font-weight: 700;
+      }
+
+      .hero {
+        height: 85vh;
+        background: url("https://images.unsplash.com/photo-1528127269322-539801943592")
+          center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+      }
+
+      .hero h1 {
+        position: relative;
+        font-size: 50px;
+        text-shadow: 0 0 20px rgba(0, 200, 255, 0.7);
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 20px;
+        gap: 60px;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: 0.8s;
+      }
+
+      .section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section img {
+        width: 85%;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 30px;
+        transition: 0.4s;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      .section img:hover {
+        transform: scale(1.05);
+      }
+
+      .content {
+        width: 45%;
+      }
+
+      .content h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+      }
+
+      .content p {
+        margin-bottom: 25px;
+        font-size: 17px;
+      }
+
+      .btn {
+        padding: 12px 28px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(45deg, #00c6ff, #0072ff);
+        cursor: pointer;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .reverse {
+        flex-direction: row-reverse;
+      }
+
+      .popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+      }
+
+      .popup.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .popup-box {
+        background: white;
+        color: #222;
+        padding: 40px;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      .home-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 12px 22px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(45deg, #00c6ff, #0072ff);
+        color: white;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          flex-direction: column;
+          text-align: center;
+          padding: 70px 20px;
+        }
+
+        .section img,
+        .content {
+          width: 100%;
+        }
+
+        .section img {
+          height: 250px;
+        }
+
+        .hero h1 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LOADING -->
+
+    <div id="loader">
+      <div class="spinner"></div>
+      <p>Đang tải trang...</p>
+    </div>
+
+    <header>
+      <h2>🇻🇳 Khám Phá Việt Nam</h2>
+    </header>
+
+    <section class="hero">
+      <h1>Hành Trình Khám Phá Các Thành Phố Việt Nam</h1>
+    </section>
+
+    <!-- HÀ NỘI -->
+    <section class="section">
+      <a
+        href="https://vi.wikipedia.org/wiki/H%C3%A0_N%E1%BB%99i"
+        target="_blank"
+      >
+        <img src="hanoi.index.jpg" />
+      </a>
+
+      <div class="content">
+        <h2>Hà Nội</h2>
+        <p>
+          Hà Nội là thủ đô nghìn năm văn hiến của Việt Nam, nổi tiếng với Hồ
+          Gươm, Văn Miếu – Quốc Tử Giám và khu phố cổ mang đậm nét lịch sử.
+        </p>
+        <button class="btn" onclick="openPopup('hanoi')">Khám phá</button>
+      </div>
+    </section>
+
+    <!-- TP.HCM -->
+    <section class="section reverse">
+      <a
+        href="https://vi.wikipedia.org/wiki/Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh"
+        target="_blank"
+      >
+        <img src="hochiminh.index.jpg" />
+      </a>
+
+      <div class="content">
+        <h2>TP. Hồ Chí Minh</h2>
+        <p>
+          Thành phố năng động nhất Việt Nam với các tòa nhà hiện đại, trung tâm
+          kinh tế lớn và nhịp sống sôi động.
+        </p>
+        <button class="btn" onclick="openPopup('hcm')">Khám phá</button>
+      </div>
+    </section>
+
+    <!-- ĐÀ NẴNG -->
+    <section class="section">
+      <a
+        href="https://vi.wikipedia.org/wiki/%C4%90%C3%A0_N%E1%BA%B5ng"
+        target="_blank"
+      >
+        <img src="danang.index.jpg" />
+      </a>
+
+      <div class="content">
+        <h2>Đà Nẵng</h2>
+        <p>
+          Đà Nẵng là thành phố biển hiện đại với bãi biển Mỹ Khê, Bà Nà Hills và
+          cây Cầu Vàng nổi tiếng thế giới.
+        </p>
+        <button class="btn" onclick="openPopup('danang')">Khám phá</button>
+      </div>
+    </section>
+
+    <!-- HUẾ -->
+    <section class="section reverse">
+      <a href="https://vi.wikipedia.org/wiki/Hu%E1%BA%BF" target="_blank">
+        <img src="hue.index.jpg" />
+      </a>
+
+      <div class="content">
+        <h2>Huế</h2>
+        <p>
+          Huế là cố đô của Việt Nam với Đại Nội, chùa Thiên Mụ và dòng sông
+          Hương thơ mộng.
+        </p>
+        <button class="btn" onclick="openPopup('hue')">Khám phá</button>
+      </div>
+    </section>
+
+    <button class="home-btn" onclick="window.location.href = 'trangchinh.html'">
+      🏠 Trang chính
+    </button>
+
+    <!-- POPUP -->
+
+    <div class="popup" id="popup">
+      <div class="popup-box">
+        <div class="close" onclick="closePopup()">✖</div>
+
+        <h2 id="popupTitle"></h2>
+
+        <p id="popupText"></p>
+      </div>
+    </div>
+
+    <script>
+      const detailData = {
+        hanoi:
+          "Hà Nội có lịch sử hơn 1000 năm. Thành phố nổi tiếng với Hồ Hoàn Kiếm, phố cổ 36 phố phường, Văn Miếu – Quốc Tử Giám và nhiều di tích lịch sử quan trọng của Việt Nam.",
+
+        hcm: "Thành phố Hồ Chí Minh là trung tâm kinh tế lớn nhất Việt Nam. Nơi đây có các địa điểm nổi tiếng như chợ Bến Thành, nhà thờ Đức Bà và tòa nhà Landmark 81.",
+
+        danang:
+          "Đà Nẵng được mệnh danh là thành phố đáng sống nhất Việt Nam với môi trường sạch, bãi biển đẹp và nhiều khu du lịch nổi tiếng như Bà Nà Hills.",
+
+        hue: "Huế là cố đô của triều Nguyễn với nhiều di sản được UNESCO công nhận như Quần thể di tích Cố đô Huế và Nhã nhạc cung đình.",
+      };
+
+      function openPopup(city) {
+        document.getElementById("popupTitle").innerText = city.toUpperCase();
+        document.getElementById("popupText").innerText = detailData[city];
+        document.getElementById("popup").classList.add("active");
+      }
+
+      function closePopup() {
+        document.getElementById("popup").classList.remove("active");
+      }
+
+      const sections = document.querySelectorAll(".section");
+
+      function revealOnScroll() {
+        const trigger = window.innerHeight * 0.85;
+
+        sections.forEach((section) => {
+          const top = section.getBoundingClientRect().top;
+
+          if (top < trigger) {
+            section.classList.add("show");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+
+      /* LOADING */
+
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 600);
+      });
+    </script>
+  </body>
+</html>

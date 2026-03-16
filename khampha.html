@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khám phá Việt Nam</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #f4f6f8;
+        color: #333;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        background: #0f5d48;
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 80vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+          url("danh-lam-thang-canh-viet-nam-1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        font-weight: 700;
+        text-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        animation: fadeUp 1.5s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* QUICK MENU */
+
+      .quick {
+        text-align: center;
+        padding: 35px;
+        background: white;
+      }
+
+      .quick a {
+        margin: 10px;
+        padding: 14px 25px;
+        background: #0f5d48;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: 0.3s;
+      }
+
+      .quick a:hover {
+        background: #0c4637;
+        transform: translateY(-3px);
+      }
+
+      /* SECTION */
+
+      .section {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 80px 0;
+      }
+
+      .section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #0f5d48;
+        font-size: 30px;
+      }
+
+      /* GRID */
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+      }
+
+      /* CARD */
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transform: translateY(40px);
+        opacity: 0;
+        transition: 0.5s;
+      }
+
+      .card.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card h3 {
+        padding: 18px;
+      }
+
+      /* POPUP */
+
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+
+        max-width: 750px; /* rộng hơn */
+        width: 92%;
+
+        max-height: 85vh; /* không vượt màn hình */
+        overflow-y: auto; /* nội dung dài thì cuộn */
+
+        text-align: center;
+        animation: fadeUp 0.6s;
+      }
+
+      .popup-content img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .popup-content p {
+        text-align: justify;
+        line-height: 1.6;
+        margin-top: 10px;
+      }
+
+      .popup-content a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 22px;
+        background: #0f5d48;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: 0.3s;
+      }
+
+      .popup-content a:hover {
+        background: #0c4637;
+      }
+
+      .close {
+        font-size: 28px;
+        cursor: pointer;
+        float: right;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #0f5d48;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        margin-top: 50px;
+      }
+      /* ===== MOBILE RESPONSIVE ===== */
+
+      @media (max-width: 768px) {
+        /* NAVBAR */
+
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 15px 20px;
+        }
+
+        nav div {
+          margin-top: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        nav a {
+          margin-left: 0;
+          font-size: 14px;
+        }
+
+        /* HERO */
+
+        .hero {
+          height: 60vh;
+          background-attachment: scroll;
+          padding: 20px;
+        }
+
+        .hero h1 {
+          font-size: 34px;
+        }
+
+        .hero p {
+          font-size: 16px;
+        }
+
+        /* QUICK MENU */
+
+        .quick {
+          padding: 25px 15px;
+        }
+
+        .quick a {
+          display: inline-block;
+          margin: 6px;
+          padding: 10px 18px;
+          font-size: 14px;
+        }
+
+        /* SECTION */
+
+        .section {
+          padding: 50px 0;
+        }
+
+        .section h2 {
+          font-size: 24px;
+        }
+
+        /* GRID */
+
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        /* CARD */
+
+        .card img {
+          height: 180px;
+        }
+
+        .card h3 {
+          font-size: 18px;
+          padding: 14px;
+        }
+
+        /* POPUP */
+
+        .popup-content {
+          padding: 20px;
+        }
+
+        .popup-content h2 {
+          font-size: 22px;
+        }
+
+        .popup-content p {
+          font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+          font-size: 14px;
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <b>Khám Phá Việt Nam</b>
+
+      <div>
+        <a href="trangchinh.html" class="home-btn">🏠 Trang chủ</a>
+        <a href="#photo">Chụp ảnh</a>
+        <a href="#fun">Vui chơi</a>
+        <a href="#culture">Văn hoá</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <h1>Khám phá những trải nghiệm tuyệt vời</h1>
+        <p>Du lịch • Chụp ảnh • Văn hoá</p>
+      </div>
+    </div>
+
+    <div class="quick">
+      <a href="#photo">📸 Chụp ảnh đẹp</a>
+      <a href="#fun">🎮 Vui chơi</a>
+      <a href="#culture">🏛 Văn ho hoá</a>
+    </div>
+
+    <!-- PHOTO -->
+
+    <div class="section" id="photo">
+      <h2>📸 Địa điểm chụp ảnh nổi tiếng</h2>
+
+      <div class="grid">
+        <div
+          class="card"
+          data-title="Phố cổ Hội An"
+          data-text="Phố cổ Hội An nằm ở hạ lưu sông Thu Bồn, thuộc tỉnh Quảng Nam, cách thành phố Đà Nẵng khoảng 30 km. Nơi đây có lịch sử hơn 400 năm và từng là một thương cảng quốc tế sầm uất vào thế kỷ XVI–XVIII, nơi giao thương của nhiều thương nhân từ Nhật Bản, Trung Quốc và các nước phương Tây.
+
+Phố cổ Hội An nổi bật với những ngôi nhà cổ mái ngói rêu phong, tường vàng đặc trưng và những con phố nhỏ mang vẻ đẹp cổ kính. Vào buổi tối, những chiếc đèn lồng nhiều màu sắc được thắp sáng tạo nên khung cảnh rất lung linh và hấp dẫn. Một số địa điểm nổi tiếng ở Hội An là Chùa Cầu, Nhà cổ Phùng Hưng và Hội quán Phúc Kiến.
+
+Năm 1999, phố cổ Hội An được UNESCO công nhận là Di sản Văn hóa Thế giới. Ngày nay, nơi đây là điểm du lịch nổi tiếng của Việt Nam, thu hút nhiều du khách trong và ngoài nước."
+          data-link="https://vi.wikipedia.org/wiki/Hội_An"
+        >
+          <img src="hoian.jpg" />
+          <h3>Phố cổ Hội An</h3>
+        </div>
+
+        <div
+          class="card"
+          data-title="Ruộng bậc thang Sa Pa"
+          data-text="Sa Pa là một thị trấn du lịch nổi tiếng thuộc tỉnh Lào Cai, nằm ở vùng núi phía Bắc của Việt Nam. Nơi đây nằm ở độ cao khoảng 1.600 mét so với mực nước biển, nên có khí hậu mát mẻ quanh năm, đôi khi còn xuất hiện sương mù và tuyết vào mùa đông.
+
+Sa Pa nổi tiếng với cảnh quan thiên nhiên hùng vĩ như ruộng bậc thang, núi rừng trùng điệp và những thung lũng xanh mát. Một trong những địa điểm nổi bật nhất là đỉnh Fansipan, được gọi là “nóc nhà Đông Dương”. Ngoài ra, du khách còn có thể tham quan các bản làng của người dân tộc như Cát Cát, Tả Van để tìm hiểu về cuộc sống và văn hóa địa phương.
+
+Không chỉ có thiên nhiên đẹp, Sa Pa còn hấp dẫn bởi các món ăn đặc sản như cá hồi, lẩu cá tầm, thịt nướng và thắng cố. Với khí hậu mát mẻ và cảnh đẹp độc đáo, Sa Pa là điểm du lịch được nhiều du khách trong và ngoài nước yêu thích."
+          data-link="https://vi.wikipedia.org/wiki/Sa_Pa"
+        >
+          <img src="sapa.jpg" />
+          <h3>Sa Pa</h3>
+        </div>
+
+        <div
+          class="card"
+          data-title="Đà Lạt"
+          data-text="Đà Lạt là một thành phố du lịch nổi tiếng thuộc tỉnh Lâm Đồng, nằm trên cao nguyên Lâm Viên ở độ cao khoảng 1.500 mét so với mực nước biển. Nhờ khí hậu mát mẻ quanh năm, Đà Lạt thường được gọi là “thành phố ngàn hoa” hoặc “thành phố sương mù”.
+
+Đà Lạt nổi bật với phong cảnh thiên nhiên thơ mộng như rừng thông xanh, hồ nước trong lành và những vườn hoa rực rỡ. Một số địa điểm nổi tiếng ở đây là Hồ Xuân Hương, Thung lũng Tình Yêu, đồi chè Cầu Đất và núi Langbiang. Thành phố cũng có nhiều công trình kiến trúc đẹp như nhà thờ Con Gà và ga Đà Lạt cổ.
+
+Ngoài cảnh đẹp, Đà Lạt còn hấp dẫn du khách với các món ăn đặc sản như bánh tráng nướng, lẩu gà lá é và dâu tây tươi. Với khí hậu dễ chịu và khung cảnh lãng mạn, Đà Lạt là điểm du lịch được nhiều du khách yêu thích."
+          data-link="https://vi.wikipedia.org/wiki/Đà_Lạt"
+        >
+          <img src="dalat.webp" />
+          <h3>Đà Lạt</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUN -->
+
+    <div class="section" id="fun">
+      <h2>🎮 Nơi vui chơi nổi bật</h2>
+
+      <div class="grid">
+        <div
+          class="card"
+          data-title="Bà Nà Hills"
+          data-text="Bà Nà Hills là khu du lịch nổi tiếng nằm trên núi Bà Nà, thuộc huyện Hòa Vang, thành phố Đà Nẵng, cách trung tâm khoảng 25 km. Nơi đây nằm ở độ cao khoảng 1.400–1.500 mét so với mực nước biển nên có khí hậu mát mẻ quanh năm.
+
+Điểm nổi bật của Bà Nà Hills là hệ thống cáp treo hiện đại giúp du khách ngắm toàn cảnh núi rừng từ trên cao. Nổi tiếng nhất là Cầu Vàng với thiết kế hai bàn tay khổng lồ nâng đỡ cây cầu.
+
+Ngoài ra, nơi đây còn có Làng Pháp với kiến trúc châu Âu cổ kính, nhiều vườn hoa đẹp và khu vui chơi Fantasy Park. Với cảnh quan đẹp và nhiều hoạt động thú vị, Bà Nà Hills là một trong những điểm du lịch nổi tiếng của Đà Nẵng."
+          data-link="https://vi.wikipedia.org/wiki/Bà_Nà"
+        >
+          <img src="Làng-Pháp-Bà-Nà-Hills-1.jpg" />
+          <h3>Bà Nà Hills</h3>
+        </div>
+
+        <div
+          class="card"
+          data-title="VinWonders Phú Quốc"
+          data-text="VinWonders Phú Quốc là công viên giải trí lớn nằm trên đảo Phú Quốc, thuộc tỉnh Kiên Giang. Đây là một trong những công viên chủ đề lớn nhất Việt Nam, thu hút nhiều du khách trong và ngoài nước.
+
+VinWonders có nhiều khu vui chơi hấp dẫn như trò chơi cảm giác mạnh, thủy cung, công viên nước và các khu chủ đề được thiết kế theo phong cách cổ tích. Một trong những điểm nổi bật là thủy cung lớn với nhiều loài sinh vật biển và các chương trình biểu diễn đặc sắc.
+
+Với nhiều hoạt động giải trí thú vị và không gian rộng lớn, VinWonders Phú Quốc là điểm vui chơi nổi tiếng dành cho gia đình và du khách khi đến tham quan đảo Phú Quốc."
+          data-link="https://vi.wikipedia.org/wiki/VinWonders"
+        >
+          <img src="kinh-nghiem-vui-choi-tai-vinwonders-phu-quoc-2.webp" />
+          <h3>VinWonders</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- CULTURE -->
+
+    <div class="section" id="culture">
+      <h2>🏛 Khám phá văn hoá</h2>
+
+      <div class="grid">
+        <div
+          class="card"
+          data-title="Đại Nội Huế"
+          data-text="Đại Nội Huế nằm trong Kinh thành Huế, thuộc thành phố Huế, tỉnh Thừa Thiên Huế. Đây là trung tâm chính trị và nơi sinh sống của các vua triều Nguyễn – triều đại phong kiến cuối cùng của Việt Nam.
+
+Đại Nội được xây dựng vào đầu thế kỷ XIX với nhiều công trình kiến trúc cung đình như Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành và nhiều cung điện khác. Các công trình được xây dựng công phu, mang đậm nét kiến trúc cung đình Việt Nam.
+
+Năm 1993, quần thể di tích Cố đô Huế được UNESCO công nhận là Di sản Văn hóa Thế giới. Ngày nay, Đại Nội Huế là một điểm tham quan nổi tiếng, thu hút nhiều du khách đến tìm hiểu lịch sử và văn hóa Việt Nam.
+      ==>Di sản thế giới UNESCO của triều Nguyễn."
+          data-link="https://vi.wikipedia.org/wiki/Kinh_thành_Huế"
+        >
+          <img src="dai-noi-kinh-thanh-hue-2-1024x683.jpg" />
+          <h3>Đại Nội Huế</h3>
+        </div>
+
+        <div
+          class="card"
+          data-title="Văn Miếu"
+          data-text="Văn Miếu – Quốc Tử Giám nằm ở thành phố Hà Nội, là một di tích lịch sử và văn hóa nổi tiếng của Việt Nam. Công trình được xây dựng vào năm 1070 dưới thời vua Lý Thánh Tông để thờ Khổng Tử và các bậc hiền triết.
+
+Sau đó, Quốc Tử Giám được xây dựng tại đây và trở thành trường đại học đầu tiên của Việt Nam, nơi đào tạo nhiều nhân tài cho đất nước. Trong khu di tích còn có 82 bia tiến sĩ ghi danh những người đỗ đạt cao trong các kỳ thi thời xưa.
+
+Ngày nay, Văn Miếu – Quốc Tử Giám là điểm tham quan nổi tiếng và là nơi nhiều học sinh, sinh viên đến cầu may mắn trong học tập và thi cử. Đây cũng là một trong những di tích lịch sử quan trọng, thu hút nhiều du khách trong và ngoài nước đến tìm hiểu về lịch sử giáo dục và văn hóa Việt Nam."
+          data-link="https://vi.wikipedia.org/wiki/Văn_Miếu"
+        >
+          <img src="van-mieu-quoc-tu-giam-1.jpg" />
+          <h3>Văn Miếu</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- POPUP -->
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <img id="popup-img" />
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+        <a id="popup-link" target="_blank">Xem thêm</a>
+      </div>
+    </div>
+
+    <footer>© 2026 Khám Phá Việt Nam</footer>
+
+    <script>
+      /* animation scroll */
+
+      const cards = document.querySelectorAll(".card");
+
+      window.addEventListener("scroll", () => {
+        cards.forEach((card) => {
+          if (card.getBoundingClientRect().top < window.innerHeight - 100) {
+            card.classList.add("show");
+          }
+        });
+      });
+
+      /* popup */
+
+      const popup = document.getElementById("popup");
+      const popupImg = document.getElementById("popup-img");
+      const popupTitle = document.getElementById("popup-title");
+      const popupText = document.getElementById("popup-text");
+      const popupLink = document.getElementById("popup-link");
+
+      document.querySelectorAll(".card").forEach((card) => {
+        card.onclick = () => {
+          popup.style.display = "flex";
+          popupImg.src = card.querySelector("img").src;
+          popupTitle.innerText = card.dataset.title;
+          popupText.innerText = card.dataset.text;
+          popupLink.href = card.dataset.link;
+        };
+      });
+
+      document.querySelector(".close").onclick = () => {
+        popup.style.display = "none";
+      };
+
+      popup.onclick = (e) => {
+        if (e.target === popup) {
+          popup.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>

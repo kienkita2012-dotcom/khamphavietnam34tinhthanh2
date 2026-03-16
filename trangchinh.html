@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khám Phá Việt Nam</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #f3f4f6;
+        color: #333;
+      }
+
+      /* ===== NAVBAR ===== */
+
+      nav {
+        background: #0f5d48;
+        color: white;
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        flex-wrap: wrap;
+      }
+
+      nav h2 {
+        font-size: 22px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+      }
+
+      nav ul li a:hover {
+        opacity: 0.8;
+      }
+
+      .author a {
+        background: #f4b400;
+        padding: 8px 16px;
+        border-radius: 6px;
+      }
+
+      /* ===== DROPDOWN ===== */
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background: #0f5d48;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 6px;
+
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: 0.35s;
+      }
+
+      .dropdown-menu.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .dropdown-menu li {
+        padding: 6px 0;
+      }
+
+      /* ===== HAMBURGER ===== */
+
+      .menu-toggle {
+        display: none;
+        font-size: 26px;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* ===== HERO ===== */
+
+      .hero {
+        background: linear-gradient(135deg, #b7d1b8, #e6f4ea);
+        text-align: center;
+        padding: 100px 20px;
+        animation: fadeHero 1.5s ease forwards;
+        opacity: 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        color: #0f5d48;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .hero button {
+        padding: 12px 30px;
+        background: #0f5d48;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .hero button:hover {
+        background: #094c3a;
+        transform: scale(1.05);
+      }
+
+      @keyframes fadeHero {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ===== SECTION ===== */
+
+      .section {
+        max-width: 1100px;
+        margin: 60px auto;
+        background: white;
+        border-radius: 16px;
+        padding: 35px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+        opacity: 0;
+        transform: translateY(60px) scale(0.96);
+        filter: blur(15px);
+
+        transition:
+          opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+          filter 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .section.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+
+      .section:hover {
+        transform: translateY(-5px);
+      }
+
+      .section img {
+        width: 45%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        transition: 0.4s;
+      }
+
+      .section img:hover {
+        transform: scale(1.05);
+      }
+
+      .section .content {
+        width: 55%;
+      }
+
+      .section h2 {
+        color: #d35400;
+        margin-bottom: 15px;
+        font-size: 28px;
+      }
+
+      .section p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .section a {
+        color: #1e88e5;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .section a:hover {
+        text-decoration: underline;
+      }
+
+      .reverse {
+        flex-direction: row-reverse;
+      }
+
+      /* ===== MAP SECTION ===== */
+
+      .map-section {
+        background: #e6f4ea;
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .map-section h2 {
+        color: #0f5d48;
+        margin-bottom: 40px;
+        font-size: 30px;
+      }
+
+      .map-btn {
+        padding: 14px 36px;
+        background: linear-gradient(135deg, #1e88e5, #1565c0);
+        color: white;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: 0.3s;
+      }
+
+      .map-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      /* ===== MAP POPUP ===== */
+
+      .map-popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 2000;
+      }
+
+      .map-popup.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .map-box {
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 700px;
+        max-height: 85vh;
+        overflow-y: auto;
+        text-align: center;
+        position: relative;
+      }
+
+      .map-image-wrapper {
+        overflow: hidden;
+        max-height: 70vh;
+        cursor: grab;
+        position: relative;
+        touch-action: none;
+      }
+
+      .map-image-wrapper img {
+        width: 100%;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      /* ===== ZOOM BUTTONS ===== */
+
+      .zoom-controls {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 3000;
+      }
+
+      .zoom-controls button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        border: none;
+        border-radius: 10px;
+        background: #1e88e5;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .zoom-controls button:hover {
+        transform: scale(1.1);
+      }
+
+      /* ===== FOOTER ===== */
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        background: #0f5d48;
+        color: white;
+        margin-top: 60px;
+      }
+
+      /* ===== MOBILE ===== */
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        nav ul {
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+          background: #0f5d48;
+          padding-left: 20px;
+        }
+
+        nav ul.show {
+          max-height: 400px;
+        }
+
+        .dropdown-menu {
+          position: static;
+          width: 100%;
+        }
+
+        .section {
+          flex-direction: column;
+          margin: 40px 15px;
+          padding: 22px;
+        }
+
+        .section img {
+          width: 100%;
+          height: 200px;
+        }
+
+        .section .content {
+          width: 100%;
+        }
+
+        .hero {
+          padding: 70px 20px;
+        }
+
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .hero p {
+          font-size: 15px;
+        }
+
+        .hero button {
+          font-size: 14px;
+          padding: 10px 24px;
+        }
+
+        .map-section {
+          padding: 70px 20px;
+        }
+
+        .map-section h2 {
+          font-size: 24px;
+        }
+
+        .map-btn {
+          padding: 12px 26px;
+          font-size: 14px;
+        }
+
+        .map-box {
+          width: 95%;
+        }
+
+        .zoom-controls button {
+          width: 36px;
+          height: 36px;
+        }
+
+        footer {
+          font-size: 14px;
+          padding: 25px;
+        }
+      }
+
+      /* ===== IMAGE FIX ===== */
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <h2>Khám Phá Việt Nam</h2>
+
+      <div class="menu-toggle" onclick="toggleNav()">☰</div>
+
+      <ul id="navMenu">
+        <li><a href="index.html">Trang Chủ</a></li>
+
+        <li class="dropdown">
+          <a href="#" onclick="toggleMenu()">Các Vùng ▾</a>
+
+          <ul class="dropdown-menu" id="regionMenu">
+            <li>
+              <a href="trungdumiennuiphiabac.html"
+                >Trung du và Miền núi phía Bắc</a
+              >
+            </li>
+            <li><a href="dongbangsonghong.html">Đồng Bằng Sông Hồng</a></li>
+            <li><a href="bactrungbo.html">Bắc Trung Bộ</a></li>
+            <li><a href="namtrungbo.html">Nam Trung Bộ</a></li>
+            <li><a href="dongnambo.html">Đông Nam Bộ</a></li>
+            <li><a href="dongbangsongcuulong.html">ĐBS Cửu Long</a></li>
+          </ul>
+        </li>
+
+        <li class="author"><a href="gioithieu.html">Về Tác Giả</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Việt Nam: Hành trình Vạn dặm</h1>
+      <p>
+        Khám phá vẻ đẹp từ Bắc vào Nam, nơi mỗi vùng đất là một trải nghiệm.
+      </p>
+      <button onclick="location.href = 'khampha.html'">Khám phá ngay</button>
+    </section>
+
+    <!-- TRUNG DU MIỀN NÚI PHÍA BẮC -->
+    <section class="section">
+      <img src="trungdumiennuiphiabac.jpg" alt="Tây Bắc" class="province-img" />
+
+      <div class="content">
+        <h2>Trung du và Miền núi phía Bắc</h2>
+        <p>
+          Vùng đất hùng vĩ với những dãy núi cao, ruộng bậc thang tuyệt đẹp và
+          bản sắc văn hóa đa dạng của các dân tộc thiểu số.
+        </p>
+        <a href="trungdumiennuiphiabac.html">Xem thêm →</a>
+      </div>
+    </section>
+
+    <!-- ĐỒNG BẰNG SÔNG HỒNG -->
+    <section class="section reverse">
+      <img src="dongbangsonghong.jpg" alt="Hà Nội" class="province-img" />
+
+      <div class="content">
+        <h2>Đồng bằng sông Hồng</h2>
+        <p>
+          Cái nôi văn hóa lâu đời của Việt Nam với Hà Nội nghìn năm văn hiến
+          cùng nhiều di tích lịch sử nổi tiếng.
+        </p>
+        <a href="dongbangsonghong.html">Xem thêm →</a>
+      </div>
+    </section>
+
+    <!-- BẮC TRUNG BỘ -->
+    <section class="section">
+      <img src="bactrungbo.jpg" alt="Huế" class="province-img" />
+
+      <div class="content">
+        <h2>Bắc Trung Bộ</h2>
+        <p>
+          Nơi hội tụ nhiều di sản văn hóa và lịch sử nổi bật như cố đô Huế,
+          Phong Nha – Kẻ Bàng và nhiều bãi biển đẹp.
+        </p>
+        <a href="bactrungbo.html">Xem thêm →</a>
+      </div>
+    </section>
+
+    <!-- NAM TRUNG BỘ -->
+    <section class="section reverse">
+      <img src="namtrungbo.jpg" alt="Đà Nẵng" class="province-img" />
+
+      <div class="content">
+        <h2>Nam Trung Bộ</h2>
+        <p>
+          Vùng biển nổi tiếng với các thành phố du lịch như Đà Nẵng, Nha Trang
+          và những bãi biển đẹp trải dài.
+        </p>
+        <a href="namtrungbo.html">Xem thêm →</a>
+      </div>
+    </section>
+
+    <!-- ĐÔNG NAM BỘ -->
+    <section class="section">
+      <img src="dongnambo.jpg" alt="TPHCM" class="province-img" />
+
+      <div class="content">
+        <h2>Đông Nam Bộ</h2>
+        <p>
+          Trung tâm kinh tế năng động của cả nước với Thành phố Hồ Chí Minh và
+          nhiều khu công nghiệp phát triển.
+        </p>
+        <a href="dongnambo.html">Xem thêm →</a>
+      </div>
+    </section>
+
+    <!-- ĐỒNG BẰNG SÔNG CỬU LONG -->
+    <section class="section reverse">
+      <img src="dongbangsongcuulong.jpg" alt="Miền Tây" class="province-img" />
+
+      <div class="content">
+        <h2>Đồng bằng sông Cửu Long</h2>
+        <p>
+          Vùng đất sông nước trù phú với chợ nổi, vườn trái cây và văn hóa đặc
+          trưng của miền Tây Nam Bộ.
+        </p>
+        <a href="dongbangsongcuulong.html">Xem thêm →</a>
+      </div>
+    </section>
+
+    <div class="map-section">
+      <h2>Khám Phá Việt Nam Trên Bản Đồ</h2>
+
+      <button onclick="openMap()" class="map-btn">
+        🗺️ Xem Bản Đồ Việt Nam
+      </button>
+    </div>
+
+    <div class="map-popup" id="mapPopup">
+      <div class="map-box">
+        <div class="map-close" onclick="closeMap()">✖</div>
+        <h2>Bản Đồ Việt Nam</h2>
+        <div class="zoom-controls">
+          <button onclick="zoomIn()">+</button>
+          <button onclick="zoomOut()">−</button>
+        </div>
+
+        <div class="map-image-wrapper">
+          <img id="mapImage" src="ban-do-viet-nam-sau-sap-nhap.jpg" />
+        </div>
+      </div>
+    </div>
+    <footer>© 2026 Khám Phá Việt Nam | Website Du Lịch</footer>
+    <script>
+      const sections = document.querySelectorAll(".section");
+
+      function revealOnScroll() {
+        const triggerPoint = window.innerHeight * 0.85;
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+
+          if (sectionTop < triggerPoint) {
+            section.classList.add("show");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+
+      /* ===== MAP POPUP ===== */
+      function openMap() {
+        document.getElementById("mapPopup").classList.add("active");
+      }
+
+      function closeMap() {
+        document.getElementById("mapPopup").classList.remove("active");
+      }
+
+      /* ===== ZOOM + DRAG ===== */
+      let scale = 1;
+      let posX = 0;
+      let posY = 0;
+      let isDragging = false;
+      let startX, startY;
+
+      const mapImage = document.getElementById("mapImage");
+      const wrapper = document.querySelector(".map-image-wrapper");
+
+      function updateTransform() {
+        mapImage.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+      }
+
+      function zoomIn() {
+        scale += 0.2;
+        updateTransform();
+      }
+
+      function zoomOut() {
+        if (scale > 1) {
+          scale -= 0.2;
+          updateTransform();
+        }
+      }
+
+      /* ===== KÉO CHUỘT ===== */
+      wrapper.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startX = e.clientX - posX;
+        startY = e.clientY - posY;
+        wrapper.style.cursor = "grabbing";
+      });
+
+      window.addEventListener("mouseup", () => {
+        isDragging = false;
+        wrapper.style.cursor = "grab";
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        posX = e.clientX - startX;
+        posY = e.clientY - startY;
+        updateTransform();
+      });
+      function toggleMenu() {
+        const menu = document.getElementById("regionMenu");
+
+        if (menu.style.display === "flex") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "flex";
+        }
+      }
+      function toggleMenu() {
+        const menu = document.getElementById("regionMenu");
+        menu.classList.toggle("show");
+      }
+      function toggleNav() {
+        document.querySelector("nav ul").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

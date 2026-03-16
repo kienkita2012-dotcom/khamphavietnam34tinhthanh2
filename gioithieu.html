@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới Thiệu Tác Giả</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f3f4f6;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* HEADER */
+      header {
+        background: #1e3a8a;
+        color: white;
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        animation: slideDown 1s ease;
+      }
+
+      header a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      header a:hover {
+        opacity: 0.8;
+      }
+
+      /* HERO */
+      .hero {
+        background: linear-gradient(135deg, #dbeafe, #eff6ff);
+        text-align: center;
+        padding: 80px 20px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        animation: fadeIn 1.5s ease;
+      }
+
+      .hero h1 {
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+
+      /* CONTENT */
+      .container {
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 20px;
+      }
+
+      .card-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+      }
+
+      .card {
+        background: white;
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        width: 400px;
+        transition: 0.4s;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: cardAppear 1s ease forwards;
+      }
+
+      .card:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      /* AVATAR */
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 6px solid #e0e7ff;
+        transition: 0.5s;
+      }
+
+      .avatar:hover {
+        transform: rotate(5deg) scale(1.05);
+      }
+
+      /* TEXT */
+      h2 {
+        margin-bottom: 10px;
+        color: #1e3a8a;
+      }
+
+      .info {
+        margin-top: 20px;
+        line-height: 1.8;
+        font-size: 16px;
+        text-align: left;
+      }
+
+      /* BUTTON */
+      .btn-home {
+        display: inline-block;
+        margin-top: 50px;
+        padding: 12px 25px;
+        background: #1e3a8a;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.4s;
+      }
+
+      .btn-home:hover {
+        background: #172554;
+        transform: scale(1.05);
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 40px;
+        background: #1e3a8a;
+        color: white;
+        margin-top: 60px;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        animation: fadeIn 2s ease;
+      }
+
+      /* KEYFRAMES */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes cardAppear {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h2>GIỚI THIỆU</h2>
+      <a href="trangchinh.html">← Về Trang Chủ</a>
+    </header>
+
+    <section class="hero">
+      <h1>Thông Tin Thực Hiện Dự Án</h1>
+      <p>Website Khám Phá 34 Tỉnh Thành Việt Nam</p>
+    </section>
+
+    <div class="container">
+      <div class="card-wrapper">
+        <!-- TÁC GIẢ -->
+        <div class="card">
+          <img src="avt1.jpg" class="avatar" />
+          <h2>Nguyễn Trung Kiên</h2>
+          <p><strong>Học sinh thực hiện</strong></p>
+
+          <div class="info">
+            <p><strong>Lớp:</strong> 8/5</p>
+            <p><strong>Trường:</strong> Trường THCS Hùng Vương</p>
+            <p><strong>Sở thích:</strong> Lập trình web, thiết kế giao diện</p>
+            <p><strong>Liên hệ:</strong> kienkita.2012@gmail.com</p>
+            <p>
+              <strong>Mục tiêu:</strong> Xây dựng website giới thiệu Việt Nam
+              sinh động và dễ hiểu.
+            </p>
+          </div>
+        </div>
+
+        <!-- GIÁO VIÊN -->
+        <div class="card">
+          <img src="avt2 (2).jpg" class="avatar" />
+          <h2>Thầy : Nguyễn Tiểu Long</h2>
+          <p><strong>Giáo viên phụ trách</strong></p>
+
+          <div class="info">
+            <p><strong>Môn:</strong> Toán</p>
+            <p><strong>Trường:</strong> Trường THCS Hùng Vương</p>
+            <p>
+              <strong>Vai trò:</strong> Hướng dẫn và góp ý hoàn thiện dự án.
+            </p>
+            <p>
+              <strong>Đóng góp:</strong> Định hướng nội dung và kiểm duyệt thông
+              tin.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center">
+        <a href="trangchinh.html" class="btn-home">Quay Lại Trang Chủ</a>
+      </div>
+    </div>
+
+    <footer>© 2026 Dự Án Khám Phá Việt Nam</footer>
+  </body>
+</html>
