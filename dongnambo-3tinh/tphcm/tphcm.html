@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Thành phố Hồ Chí Minh</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f5f7f9;
+        color: #333;
+        line-height: 1.7;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 60px;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        z-index: 1000;
+        backdrop-filter: blur(6px);
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 100vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1508057198894-247b23fe5ade")
+            center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 90px 20px;
+      }
+
+      .section h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+        color: #2c3e50;
+      }
+
+      .section p {
+        margin-bottom: 16px;
+      }
+
+      /* CARD */
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 16px;
+      }
+
+      .card button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: none;
+        background: #3498db;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      /* FOOD */
+
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .food {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .food:hover {
+        background: #ecf5ff;
+        transform: translateY(-4px);
+      }
+
+      /* POPUP */
+
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        max-width: 420px;
+        text-align: center;
+        position: relative;
+        animation: popup 0.3s ease;
+      }
+
+      @keyframes popup {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+        color: #777;
+      }
+
+      /* VIDEO */
+
+      .video iframe {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 40px;
+      }
+
+      /* SCROLL */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+      <div><b>Việt Nam</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#danhlam">Danh lam</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENNAM.html">Trang chủ</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Thành phố Hồ Chí Minh</h1>
+        <p>Trung tâm kinh tế – văn hóa lớn nhất Việt Nam</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section reveal">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <strong>Thành phố Hồ Chí Minh</strong> (thường gọi là
+        <strong>Sài Gòn</strong>) là thành phố lớn nhất và năng động nhất của
+        Việt Nam. Thành phố nằm ở khu vực <strong>Đông Nam Bộ</strong>, có vị
+        trí giao thông quan trọng kết nối các vùng kinh tế lớn của cả nước.
+      </p>
+
+      <p>
+        Với dân số hơn <strong>10 triệu người</strong>, Thành phố Hồ Chí Minh là
+        <strong>trung tâm kinh tế, tài chính, thương mại và du lịch</strong>
+        hàng đầu Việt Nam. Thành phố đóng góp khoảng
+        <strong>20–25% GDP</strong> của cả nước và là nơi tập trung nhiều doanh
+        nghiệp, khu công nghiệp và trung tâm thương mại lớn.
+      </p>
+
+      <p>
+        Không chỉ phát triển về kinh tế, thành phố còn nổi tiếng với
+        <strong
+          >lịch sử lâu đời, kiến trúc Pháp cổ, văn hóa đa dạng và nhịp sống sôi
+          động</strong
+        >. Du khách khi đến đây có thể cảm nhận được sự kết hợp hài hòa giữa
+        <strong>truyền thống và hiện đại</strong>.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section reveal">
+      <h2>Bản đồ</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Ho%20Chi%20Minh%20City&output=embed"
+        width="100%"
+        height="400"
+      >
+      </iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="danhlam" class="section reveal">
+      <h2>Danh lam thắng cảnh</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1583417319070-4a69db38a482"
+          />
+          <div class="card-content">
+            <h3>Nhà thờ Đức Bà</h3>
+            <p>
+              Công trình kiến trúc nổi tiếng được xây dựng từ thời Pháp thuộc.
+            </p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_%C4%90%E1%BB%A9c_B%C3%A0_S%C3%A0i_G%C3%B2n',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade"
+          />
+          <div class="card-content">
+            <h3>Chợ Bến Thành</h3>
+            <p>Biểu tượng nổi tiếng của thành phố và là khu chợ du lịch lớn.</p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_B%E1%BA%BFn_Th%C3%A0nh',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c"
+          />
+          <div class="card-content">
+            <h3>Dinh Độc Lập</h3>
+            <p>Di tích lịch sử quan trọng gắn với sự kiện 30/4/1975.</p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/Dinh_%C4%90%E1%BB%99c_L%E1%BA%ADp',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section reveal">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-grid">
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Cơm tấm',
+              'Món ăn nổi tiếng của Sài Gòn với sườn nướng, bì và trứng.',
+            )
+          "
+        >
+          Cơm tấm
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Bánh mì Sài Gòn',
+              'Bánh mì với nhiều loại nhân như thịt, pate, rau và nước sốt.',
+            )
+          "
+        >
+          Bánh mì Sài Gòn
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood('Hủ tiếu', 'Món nước nổi tiếng của người Hoa tại Sài Gòn.')
+          "
+        >
+          Hủ tiếu
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Gỏi cuốn',
+              'Món ăn nhẹ với tôm, thịt và rau sống cuốn bánh tráng.',
+            )
+          "
+        >
+          Gỏi cuốn
+        </div>
+      </div>
+    </section>
+
+    <!-- POPUP -->
+
+    <div class="popup" id="popup" onclick="closePopup()">
+      <div class="popup-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closePopup()">✖</span>
+
+        <h3 id="foodTitle"></h3>
+        <p id="foodText"></p>
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+
+    <section class="section video reveal">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/0AsilHk7M7Q"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- DU LỊCH -->
+
+    <section class="section reveal">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <strong>Thời gian đẹp nhất:</strong> từ tháng 12 đến tháng 4 khi thời
+        tiết khô ráo.
+      </p>
+
+      <p>
+        <strong>Di chuyển:</strong> có thể đến bằng máy bay qua
+        <strong>sân bay Tân Sơn Nhất</strong>, tàu hỏa hoặc xe khách.
+      </p>
+    </section>
+
+    <footer>
+      <p>Website khám phá các tỉnh thành Việt Nam</p>
+      <p>© 2026</p>
+    </footer>
+
+    <script>
+      function showFood(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("foodTitle").innerText = title;
+        document.getElementById("foodText").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          const height = window.innerHeight;
+
+          if (top < height - 100) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hải Phòng – Thành phố Hoa Phượng Đỏ</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #00b4d8;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("haiphong.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      /* CARDS */
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      /* FOOD */
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 10px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        font-size: 14px;
+        padding: 0 10px 15px;
+      }
+
+      /* VIDEO */
+
+      iframe {
+        border-radius: 15px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Hải Phòng</b></div>
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Hải Phòng</h1>
+        <p>Thành phố cảng năng động của miền Bắc</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Hải Phòng</b> là một trong những thành phố lớn và quan trọng của Việt
+        Nam, nằm ở vùng <b>duyên hải Bắc Bộ</b>. Thành phố có diện tích khoảng
+        <b>1.561 km²</b> với dân số hơn <b>2 triệu người</b>.
+      </p>
+
+      <p>
+        Hải Phòng được biết đến là <b>thành phố cảng lớn nhất miền Bắc</b>, đóng
+        vai trò quan trọng trong phát triển kinh tế, giao thương quốc tế và vận
+        tải biển của Việt Nam.
+      </p>
+
+      <p>
+        Ngoài ra, Hải Phòng còn được gọi là <b>"Thành phố Hoa Phượng Đỏ"</b>
+        vì vào mỗi mùa hè, những hàng cây phượng vĩ nở đỏ rực khắp các con phố,
+        tạo nên vẻ đẹp đặc trưng và lãng mạn cho thành phố.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Hải Phòng&output=embed"
+        width="100%"
+        height="350"
+      >
+      </iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="catba.jpg" />
+          <div class="card-content">
+            <h3>Đảo Cát Bà</h3>
+            <p>
+              <b>Cát Bà</b> là quần đảo nổi tiếng với vẻ đẹp thiên nhiên hoang
+              sơ, bãi biển trong xanh và hệ sinh thái rừng – biển phong phú.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="doson.jpg" />
+          <div class="card-content">
+            <h3>Đồ Sơn</h3>
+            <p>
+              <b>Đồ Sơn</b> là khu du lịch biển nổi tiếng của Hải Phòng, thu hút
+              du khách với những bãi tắm đẹp và nhiều khu nghỉ dưỡng.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="nhahatlon.jpg" />
+          <div class="card-content">
+            <h3>Nhà hát lớn Hải Phòng</h3>
+            <p>
+              <b>Nhà hát lớn Hải Phòng</b> là công trình kiến trúc cổ được xây
+              dựng từ thời Pháp, mang phong cách châu Âu và là biểu tượng văn
+              hóa của thành phố.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="banhda.jpg" />
+          <h3>Bánh đa cua</h3>
+          <p>
+            <b>Bánh đa cua</b> là món ăn nổi tiếng nhất của Hải Phòng, với nước
+            dùng đậm đà từ cua đồng và sợi bánh đa đỏ đặc trưng.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="banhmycay.jpg" />
+          <h3>Bánh mì cay</h3>
+          <p>
+            <b>Bánh mì cay</b> nhỏ gọn, giòn rụm, ăn kèm pate và tương ớt cay đã
+            trở thành món ăn vặt quen thuộc của người Hải Phòng.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="oc.jpg" />
+          <h3>Ốc Hải Phòng</h3>
+          <p>
+            Các quán <b>ốc Hải Phòng</b> nổi tiếng với nhiều loại ốc và cách chế
+            biến phong phú như ốc xào me, ốc hấp sả.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="nemcua.jpg" />
+          <h3>Nem cua bể</h3>
+          <p>
+            <b>Nem cua bể</b> là món ăn đặc sản với nhân cua biển, thịt, nấm và
+            miến được gói vuông và chiên giòn hấp dẫn.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIÊN NHIÊN -->
+
+    <section class="section">
+      <h2>Thiên nhiên – Khí hậu</h2>
+
+      <p>
+        Hải Phòng có địa hình đa dạng gồm <b>biển, đảo, đồng bằng và rừng</b>.
+        Nổi bật nhất là khu dự trữ sinh quyển thế giới <b>Cát Bà</b>
+        với hệ sinh thái phong phú và nhiều loài động thực vật quý hiếm.
+      </p>
+
+      <p>
+        Khí hậu Hải Phòng mang đặc trưng <b>nhiệt đới gió mùa</b>, mùa hè nóng
+        ẩm và mùa đông khá lạnh. Thời điểm đẹp nhất để du lịch thường từ
+        <b>tháng 4 đến tháng 10</b>.
+      </p>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/5M0g5p0xk5E"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- THÔNG TIN -->
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Hải Phòng bằng ô tô, xe
+        khách, tàu hỏa hoặc máy bay thông qua <b>Sân bay quốc tế Cát Bi</b>.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Từ tháng 4 đến tháng 10, thời tiết thuận lợi
+        cho các hoạt động du lịch biển như tắm biển, tham quan đảo và nghỉ
+        dưỡng.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>

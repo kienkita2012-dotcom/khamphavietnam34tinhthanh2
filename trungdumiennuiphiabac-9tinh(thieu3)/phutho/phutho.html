@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Phú Thọ – Đất Tổ Hùng Vương</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #00b4d8;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("phutho.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 10px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        font-size: 14px;
+        padding: 0 10px 15px;
+      }
+
+      iframe {
+        border-radius: 15px;
+      }
+
+      footer {
+        background: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Phú Thọ</b></div>
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Phú Thọ</h1>
+        <p>Vùng đất cội nguồn của dân tộc Việt Nam</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Phú Thọ</b> là một tỉnh thuộc vùng
+        <b>trung du và miền núi phía Bắc</b>, nằm ở vị trí cửa ngõ nối liền giữa
+        <b>đồng bằng Bắc Bộ</b> và <b>vùng núi Tây Bắc</b>. Tỉnh cách
+        <b>Hà Nội khoảng 80 km</b> về phía Tây Bắc, có diện tích khoảng
+        <b>3.534 km²</b> và dân số hơn <b>1,4 triệu người</b>.
+      </p>
+
+      <p>
+        Phú Thọ được xem là <b>vùng đất cội nguồn của dân tộc Việt Nam</b>, nơi
+        gắn liền với truyền thuyết <b>các Vua Hùng dựng nước Văn Lang</b>. Chính
+        vì vậy, nơi đây thường được gọi là <b>"Đất Tổ Hùng Vương"</b>, có ý
+        nghĩa đặc biệt quan trọng trong lịch sử và văn hóa của người Việt.
+      </p>
+
+      <p>
+        Ngoài giá trị lịch sử, Phú Thọ còn sở hữu nhiều
+        <b>cảnh quan thiên nhiên tươi đẹp</b>, hệ thống sông ngòi phong phú như
+        <b>sông Hồng, sông Lô và sông Đà</b>. Vùng đất này cũng nổi tiếng với
+        nhiều <b>di sản văn hóa phi vật thể</b>, đặc biệt là
+        <b>Hát Xoan Phú Thọ</b> – loại hình nghệ thuật dân gian đã được
+        <b>UNESCO công nhận là Di sản văn hóa phi vật thể của nhân loại</b>.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Phú%20Thọ&output=embed"
+        width="100%"
+        height="350"
+      ></iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="den-hung.jpg" />
+          <div class="card-content">
+            <h3>Đền Hùng</h3>
+            <p>
+              <b>Đền Hùng</b> là quần thể di tích lịch sử nổi tiếng, nơi thờ
+              <b>các Vua Hùng</b> – những người có công dựng nên nhà nước
+              <b>Văn Lang</b> đầu tiên của dân tộc Việt Nam.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="vuon-quoc-gia-xuan-son.jpg" />
+          <div class="card-content">
+            <h3>Vườn quốc gia Xuân Sơn</h3>
+            <p>
+              Đây là khu bảo tồn thiên nhiên lớn với hệ sinh thái phong phú,
+              nhiều <b>hang động, thác nước và rừng nguyên sinh</b> tuyệt đẹp.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="doimche.jpg" />
+          <div class="card-content">
+            <h3>Đồi chè Long Cốc</h3>
+            <p>
+              <b>Đồi chè Long Cốc</b> được xem là một trong những
+              <b>đồi chè đẹp nhất Việt Nam</b> với những quả đồi xanh mướt trải
+              dài như những ốc đảo giữa biển chè.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="banh-tai.jpg" />
+          <h3>Bánh tai</h3>
+          <p>
+            <b>Bánh tai Phú Thọ</b> là món ăn dân dã với lớp vỏ bột mềm và nhân
+            thịt đậm đà, rất được người dân địa phương yêu thích.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="com-nam.jpg" />
+          <h3>Cơm nắm lá cọ</h3>
+          <p>
+            <b>Cơm nắm lá cọ</b> là món ăn truyền thống của người Phú Thọ,
+            thường được ăn kèm với <b>muối vừng hoặc thịt rang</b>.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="banh-chung.jpg" />
+          <h3>Bánh chưng truyền thống</h3>
+          <p>
+            Bánh chưng gắn liền với <b>truyền thuyết Lang Liêu</b> thời
+            <b>Vua Hùng</b>, tượng trưng cho <b>đất và trời</b>.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="thit-chua.jpg" />
+          <h3>Thịt chua Thanh Sơn</h3>
+          <p>
+            <b>Thịt chua Thanh Sơn</b> là đặc sản nổi tiếng của người Mường, có
+            vị chua nhẹ và hương thơm đặc trưng.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/B0f12vrXRpA"
+        title="Video giới thiệu"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- DU LỊCH -->
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Phú Thọ từ Hà Nội bằng
+        <b>xe khách, ô tô hoặc tàu hỏa</b> chỉ trong khoảng <b>1,5 – 2 giờ</b>.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Khoảng thời gian
+        <b>tháng 3 đến tháng 4 âm lịch</b> là lúc diễn ra
+        <b>Lễ hội Đền Hùng</b>, thu hút hàng triệu du khách về hành hương tưởng
+        nhớ các Vua Hùng.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>

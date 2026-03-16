@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lào Cai – Vùng đất núi rừng Tây Bắc</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #00b4d8;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("laocai.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      /* CARDS */
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      /* FOOD */
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 10px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        font-size: 14px;
+        padding: 0 10px 15px;
+      }
+
+      /* VIDEO */
+
+      iframe {
+        border-radius: 15px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Lào Cai</b></div>
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Lào Cai</h1>
+        <p>Vẻ đẹp hùng vĩ của núi rừng Tây Bắc</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Lào Cai</b> là một tỉnh thuộc vùng <b>Tây Bắc Việt Nam</b>, nằm ở khu
+        vực biên giới giáp với <b>Trung Quốc</b>. Tỉnh có diện tích khoảng
+        <b>6.364 km²</b> và dân số hơn <b>700.000 người</b>.
+      </p>
+
+      <p>
+        Lào Cai là nơi sinh sống của nhiều dân tộc như
+        <b>H'Mông, Dao, Tày, Giáy, Nùng</b>, tạo nên nền văn hóa đa dạng và đặc
+        sắc. Những bản làng vùng cao với phong tục truyền thống độc đáo đã trở
+        thành nét hấp dẫn đối với du khách trong và ngoài nước.
+      </p>
+
+      <p>
+        Ngoài ra, Lào Cai còn là điểm du lịch nổi tiếng với các cảnh quan thiên
+        nhiên hùng vĩ, đặc biệt là thị trấn du lịch <b>Sa Pa</b> – nơi được mệnh
+        danh là <b>“thành phố trong sương”</b>.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Lào Cai&output=embed"
+        width="100%"
+        height="350"
+      >
+      </iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="sapa.jpg" />
+          <div class="card-content">
+            <h3>Sa Pa</h3>
+            <p>
+              <b>Sa Pa</b> là điểm du lịch nổi tiếng của Việt Nam với khí hậu
+              mát mẻ quanh năm, ruộng bậc thang tuyệt đẹp và nhiều bản làng dân
+              tộc đặc sắc.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="fansipan.jpg" />
+          <div class="card-content">
+            <h3>Đỉnh Fansipan</h3>
+            <p>
+              <b>Fansipan</b> được mệnh danh là <b>"Nóc nhà Đông Dương"</b> với
+              độ cao <b>3.143 mét</b>, là điểm chinh phục lý tưởng cho những
+              người yêu thích khám phá.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="bac-ha.jpg" />
+          <div class="card-content">
+            <h3>Chợ phiên Bắc Hà</h3>
+            <p>
+              <b>Chợ Bắc Hà</b> là một trong những chợ vùng cao nổi tiếng nhất
+              Việt Nam, nơi du khách có thể tìm hiểu văn hóa và đời sống của các
+              dân tộc thiểu số vùng núi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="thangco.jpg" />
+          <h3>Thắng cố</h3>
+          <p>
+            <b>Thắng cố</b> là món ăn truyền thống của người H'Mông, được nấu từ
+            thịt và nội tạng ngựa cùng nhiều loại gia vị đặc trưng.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="lauca.jpg" />
+          <h3>Lẩu cá hồi Sa Pa</h3>
+          <p>
+            <b>Lẩu cá hồi</b> là món ăn nổi tiếng của Sa Pa với cá hồi tươi được
+            nuôi trong vùng nước lạnh của núi rừng Tây Bắc.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="loncapnach.jpg" />
+          <h3>Lợn cắp nách</h3>
+          <p>
+            <b>Lợn cắp nách</b> là đặc sản vùng cao, thịt lợn được nướng hoặc
+            quay nguyên con với hương vị thơm ngon đặc biệt.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="ruoutao.jpg" />
+          <h3>Rượu táo mèo</h3>
+          <p>
+            <b>Rượu táo mèo</b> là loại rượu nổi tiếng của vùng núi Tây Bắc, có
+            hương vị thơm đặc trưng và thường được dùng trong các dịp lễ hội.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIÊN NHIÊN -->
+
+    <section class="section">
+      <h2>Thiên nhiên – Khí hậu</h2>
+
+      <p>
+        Lào Cai có địa hình chủ yếu là <b>núi cao và thung lũng</b>, tạo nên
+        cảnh quan thiên nhiên hùng vĩ với nhiều ruộng bậc thang đẹp nổi tiếng ở
+        Sa Pa và Y Tý.
+      </p>
+
+      <p>
+        Khí hậu ở đây mang đặc trưng <b>cận nhiệt đới núi cao</b>, mùa hè mát mẻ
+        và mùa đông khá lạnh, đôi khi xuất hiện <b>băng tuyết</b> ở những khu
+        vực cao như Fansipan hoặc Sa Pa.
+      </p>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/Z6fmn3UHy9c"
+        title="Video giới thiệu Lào Cai"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- THÔNG TIN -->
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Lào Cai bằng
+        <b>tàu hỏa, xe khách hoặc ô tô</b> từ Hà Nội. Sau đó tiếp tục di chuyển
+        lên Sa Pa bằng xe buýt hoặc taxi.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Thời điểm lý tưởng để du lịch Lào Cai thường
+        là từ <b>tháng 3 đến tháng 5</b> và từ <b>tháng 9 đến tháng 11</b> khi
+        thời tiết mát mẻ và cảnh sắc thiên nhiên rất đẹp.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>

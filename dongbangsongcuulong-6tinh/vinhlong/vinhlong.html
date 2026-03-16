@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vĩnh Long</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f5f7f9;
+        color: #333;
+        line-height: 1.7;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 60px;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        z-index: 1000;
+        backdrop-filter: blur(6px);
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 100vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429")
+            center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 90px 20px;
+      }
+
+      .section h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+        color: #2c3e50;
+      }
+
+      .section p {
+        margin-bottom: 16px;
+      }
+
+      /* CARD */
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 16px;
+      }
+
+      .card button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: none;
+        background: #3498db;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      /* FOOD */
+
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .food {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .food:hover {
+        background: #ecf5ff;
+        transform: translateY(-4px);
+      }
+
+      /* POPUP */
+
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        max-width: 420px;
+        text-align: center;
+        position: relative;
+        animation: popup 0.3s ease;
+      }
+
+      @keyframes popup {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+        color: #777;
+      }
+
+      /* VIDEO */
+
+      .video iframe {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 40px;
+      }
+
+      /* SCROLL */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div><b>Việt Nam</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#danhlam">Danh lam</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENNAM.html">Trang chủ</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div>
+        <h1>Vĩnh Long</h1>
+        <p>Vùng đất miệt vườn trù phú của đồng bằng sông Cửu Long</p>
+      </div>
+    </section>
+
+    <section id="gioithieu" class="section reveal">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <strong>Vĩnh Long</strong> là một tỉnh thuộc vùng
+        <strong>Đồng bằng sông Cửu Long</strong>, nằm giữa hai con sông lớn
+        <strong>sông Tiền và sông Hậu</strong>. Nhờ vị trí đặc biệt này, Vĩnh
+        Long có hệ thống kênh rạch dày đặc và đất đai màu mỡ, rất thuận lợi cho
+        phát triển nông nghiệp và du lịch sinh thái.
+      </p>
+
+      <p>
+        Tỉnh có diện tích khoảng <strong>1.525 km²</strong> với dân số hơn
+        <strong>1 triệu người</strong>. Nơi đây nổi tiếng với các
+        <strong>vườn cây ăn trái rộng lớn</strong>, những cù lao xanh mát và văn
+        hóa sông nước đặc trưng của miền Tây Nam Bộ.
+      </p>
+
+      <p>
+        Không chỉ phát triển về nông nghiệp, Vĩnh Long còn là điểm đến du lịch
+        hấp dẫn với nhiều
+        <strong
+          >khu du lịch sinh thái, làng nghề truyền thống và di tích lịch
+          sử</strong
+        >. Du khách đến đây có thể trải nghiệm cuộc sống miệt vườn, thưởng thức
+        trái cây tươi và khám phá nét đẹp văn hóa miền Tây.
+      </p>
+    </section>
+
+    <section class="section reveal">
+      <h2>Bản đồ</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Vinh%20Long&output=embed"
+        width="100%"
+        height="400"
+      >
+      </iframe>
+    </section>
+
+    <section id="danhlam" class="section reveal">
+      <h2>Danh lam thắng cảnh</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+          />
+          <div class="card-content">
+            <h3>Cù lao An Bình</h3>
+            <p>
+              Khu du lịch sinh thái nổi tiếng với vườn trái cây, nhà vườn truyền
+              thống và các hoạt động trải nghiệm sông nước.
+            </p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/C%C3%B9_lao_An_B%C3%ACnh',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+          />
+          <div class="card-content">
+            <h3>Văn Thánh Miếu</h3>
+            <p>
+              Một công trình văn hóa lịch sử nổi tiếng của Vĩnh Long, nơi tôn
+              vinh truyền thống hiếu học.
+            </p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/V%C4%83n_Th%C3%A1nh_Mi%E1%BA%BFu_V%C4%A9nh_Long',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"
+          />
+          <div class="card-content">
+            <h3>Chùa Ông</h3>
+            <p>
+              Ngôi chùa cổ mang kiến trúc Trung Hoa độc đáo, là điểm tham quan
+              và tín ngưỡng nổi tiếng.
+            </p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/Ch%C3%B9a_%C3%94ng_(V%C4%A9nh_Long)',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amthuc" class="section reveal">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-grid">
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Cam sành Tam Bình',
+              'Loại trái cây đặc sản nổi tiếng của Vĩnh Long với vị ngọt đậm và hương thơm đặc trưng.',
+            )
+          "
+        >
+          Cam sành Tam Bình
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Khoai lang Bình Tân',
+              'Đặc sản nổi tiếng của Vĩnh Long, khoai lang có vị ngọt bùi và được xuất khẩu sang nhiều nước.',
+            )
+          "
+        >
+          Khoai lang Bình Tân
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Bánh xèo miền Tây',
+              'Món bánh xèo giòn rụm ăn kèm rau sống và nước mắm chua ngọt rất hấp dẫn.',
+            )
+          "
+        >
+          Bánh xèo miền Tây
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Cá tai tượng chiên xù',
+              'Món cá chiên giòn đặc trưng của miền Tây, ăn kèm bánh tráng và rau sống.',
+            )
+          "
+        >
+          Cá tai tượng chiên xù
+        </div>
+      </div>
+    </section>
+
+    <div class="popup" id="popup" onclick="closePopup()">
+      <div class="popup-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closePopup()">✖</span>
+
+        <h3 id="foodTitle"></h3>
+        <p id="foodText"></p>
+      </div>
+    </div>
+
+    <section class="section video reveal">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/KcKt7YupPZY"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <section class="section reveal">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <strong>Thời gian đẹp nhất:</strong> từ tháng 12 đến tháng 4 khi thời
+        tiết khô ráo và thuận lợi cho tham quan các khu du lịch sinh thái.
+      </p>
+
+      <p>
+        <strong>Di chuyển:</strong> từ <strong>TP. Hồ Chí Minh</strong> đến Vĩnh
+        Long khoảng <strong>2–3 giờ</strong> bằng ô tô qua quốc lộ 1A.
+      </p>
+
+      <p>
+        <strong>Trải nghiệm nổi bật:</strong> tham quan cù lao, thưởng thức trái
+        cây miệt vườn, đi xuồng trên kênh rạch và tìm hiểu văn hóa sông nước
+        miền Tây.
+      </p>
+    </section>
+
+    <footer>
+      <p>Website khám phá các tỉnh thành Việt Nam</p>
+      <p>© 2026</p>
+    </footer>
+
+    <script>
+      function showFood(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("foodTitle").innerText = title;
+        document.getElementById("foodText").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          const height = window.innerHeight;
+
+          if (top < height - 100) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

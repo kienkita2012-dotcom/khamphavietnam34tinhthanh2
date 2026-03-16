@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Đà Nẵng – Thành phố đáng sống nhất Việt Nam</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f4fbff;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #023e8a;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1583417319070-4a69db38a482")
+            center/cover;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 14px;
+        background: #0077b6;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .btn:hover {
+        background: #023e8a;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 15px 10px;
+        color: #0077b6;
+      }
+
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 400px;
+        text-align: center;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      footer {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 80px;
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .food-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Đà Nẵng</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#lehoi">Lễ hội</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="#dulich">Du lịch</a>
+        <a href="MIENTRUNG.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Đà Nẵng</h1>
+        <p>Thành phố biển hiện đại và đáng sống của Việt Nam</p>
+      </div>
+    </section>
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Đà Nẵng</b> là một trong những thành phố lớn và phát triển nhanh nhất
+        của <b>miền Trung Việt Nam</b>. Thành phố nằm giữa hai di sản văn hóa
+        thế giới nổi tiếng là <b>Cố đô Huế</b> và <b>Phố cổ Hội An</b>.
+      </p>
+
+      <p>
+        Đà Nẵng được mệnh danh là <b>"thành phố đáng sống nhất Việt Nam"</b> nhờ
+        môi trường sống trong lành, cơ sở hạ tầng hiện đại và người dân thân
+        thiện.
+      </p>
+
+      <p>
+        Thành phố có vị trí chiến lược quan trọng với
+        <b>cảng biển lớn, sân bay quốc tế Đà Nẵng</b> và hệ thống giao thông
+        thuận lợi kết nối các tỉnh miền Trung và Tây Nguyên.
+      </p>
+
+      <p>
+        Ngày nay, Đà Nẵng không chỉ là
+        <b>trung tâm kinh tế – du lịch – văn hóa</b> của khu vực mà còn là điểm
+        đến hấp dẫn đối với du khách trong và ngoài nước nhờ
+        <b>biển đẹp, núi hùng vĩ và nhiều công trình hiện đại</b>.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Đà+Nẵng&output=embed"
+        width="100%"
+        height="350"
+      ></iframe>
+    </section>
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1583417319070-4a69db38a482"
+          />
+          <div class="card-content">
+            <h3>Cầu Rồng</h3>
+            <p>
+              Biểu tượng nổi tiếng của Đà Nẵng với thiết kế
+              <b>hình rồng vàng</b> độc đáo. Vào cuối tuần, cầu còn có
+              <b>màn trình diễn phun lửa và phun nước</b> rất hấp dẫn.
+            </p>
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Cầu_Rồng_(Đà_Nẵng)"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1528127269322-539801943592"
+          />
+          <div class="card-content">
+            <h3>Bà Nà Hills</h3>
+            <p>
+              Khu du lịch nổi tiếng nằm trên <b>núi Chúa</b>, nơi có
+              <b>Cầu Vàng</b> được nâng đỡ bởi hai bàn tay khổng lồ – một trong
+              những điểm check-in nổi tiếng thế giới.
+            </p>
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Bà_Nà_Hills"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+          />
+          <div class="card-content">
+            <h3>Ngũ Hành Sơn</h3>
+            <p>
+              Quần thể <b>5 ngọn núi đá vôi</b> gắn liền với yếu tố
+              <b>Kim – Mộc – Thủy – Hỏa – Thổ</b>, nổi tiếng với nhiều hang động
+              và chùa cổ.
+            </p>
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Ngũ_Hành_Sơn"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lehoi" class="section">
+      <h2>Văn hóa – lễ hội</h2>
+
+      <p>
+        Đà Nẵng có nhiều hoạt động văn hóa đặc sắc phản ánh đời sống của người
+        dân vùng biển miền Trung.
+      </p>
+
+      <p>
+        Nổi bật nhất là <b>Lễ hội pháo hoa quốc tế Đà Nẵng (DIFF)</b> – sự kiện
+        văn hóa du lịch lớn thu hút hàng triệu du khách mỗi năm.
+      </p>
+
+      <p>
+        Ngoài ra còn có các lễ hội truyền thống như <b>Lễ hội Cầu Ngư</b> của
+        ngư dân ven biển, thể hiện lòng biết ơn đối với
+        <b>thần biển và mong muốn mùa cá bội thu</b>.
+      </p>
+
+      <p>
+        Các hoạt động nghệ thuật, trình diễn ánh sáng và âm nhạc hiện đại cũng
+        góp phần tạo nên <b>không khí lễ hội sôi động của thành phố biển</b>.
+      </p>
+    </section>
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Mì Quảng',
+              'Món ăn nổi tiếng với sợi mì vàng, tôm, thịt và nước dùng đậm đà.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1604908176997-4311b1eab5b7"
+          />
+          <h3>Mì Quảng</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Bánh tráng cuốn thịt heo',
+              'Đặc sản nổi tiếng với thịt heo luộc, rau sống và nước mắm nêm.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+          />
+          <h3>Bánh tráng cuốn thịt heo</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Bún chả cá',
+              'Món bún với chả cá thơm ngon và nước dùng ngọt thanh.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+          />
+          <h3>Bún chả cá</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Hải sản Đà Nẵng',
+              'Hải sản tươi sống như tôm, cua, mực được chế biến rất hấp dẫn.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1559847844-d721426d6edc"
+          />
+          <h3>Hải sản</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/7AytyJ2WRNE"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <section id="dulich" class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Đà Nẵng bằng
+        <b>máy bay, tàu hỏa hoặc xe khách</b>. Sân bay quốc tế Đà Nẵng là một
+        trong những sân bay lớn nhất Việt Nam.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Từ <b>tháng 2 đến tháng 8</b> khi thời tiết
+        khô ráo và thích hợp để tắm biển.
+      </p>
+
+      <p>
+        <b>Địa điểm gần Đà Nẵng:</b> Từ thành phố có thể dễ dàng tham quan
+        <b>Hội An, Cố đô Huế, Thánh địa Mỹ Sơn</b>.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+
+        <h3 id="popup-title"></h3>
+
+        <p id="popup-text"></p>
+      </div>
+    </div>
+
+    <script>
+      function openPopup(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("popup-title").innerText = title;
+        document.getElementById("popup-text").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khánh Hòa</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f5f7f8;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 40px;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 100vh;
+        background: url("https://images.unsplash.com/photo-1583417319070-4a69db38a482")
+          center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 80px 20px;
+      }
+
+      .section h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #2c3e50;
+      }
+
+      /* CARDS */
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .card button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: none;
+        background: #3498db;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* FOOD */
+
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .food {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .food:hover {
+        background: #ecf5ff;
+      }
+
+      /* POPUP */
+
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      /* VIDEO */
+
+      .video iframe {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 30px;
+        margin-top: 40px;
+      }
+
+      /* SCROLL ANIMATION */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+      <div><b>Việt Nam</b></div>
+      <div>
+        <a href="../../MIENTRUNG.html">Trang chủ</a>
+        <a href="#danhlam">Danh lam</a>
+        <a href="#amthuc">Ẩm thực</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Khánh Hòa</h1>
+        <p>Thiên đường biển đảo của miền Trung Việt Nam</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section class="section reveal">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <strong>Khánh Hòa</strong> là một tỉnh ven biển thuộc
+        <strong>Nam Trung Bộ</strong> của Việt Nam. Tỉnh có thành phố trung tâm
+        là <strong>Nha Trang</strong>, nổi tiếng với các bãi biển đẹp và là một
+        trong những điểm du lịch biển hấp dẫn nhất cả nước.
+      </p>
+
+      <p>
+        Diện tích khoảng <strong>5.217 km²</strong>, dân số hơn
+        <strong>1,3 triệu người</strong>. Khánh Hòa có vị trí chiến lược quan
+        trọng về <strong>kinh tế biển, du lịch và quốc phòng</strong>.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section reveal">
+      <h2>Bản đồ</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Khanh%20Hoa&output=embed"
+        width="100%"
+        height="400"
+        style="border: 0"
+      >
+      </iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="danhlam" class="section reveal">
+      <h2>Danh lam thắng cảnh</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+          />
+          <div class="card-content">
+            <h3>Vịnh Nha Trang</h3>
+            <p>Một trong những vịnh biển đẹp nhất thế giới.</p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/V%E1%BB%8Bnh_Nha_Trang',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1519046904884-53103b34b206"
+          />
+          <div class="card-content">
+            <h3>Đảo Hòn Mun</h3>
+            <p>Khu bảo tồn biển nổi tiếng với rạn san hô.</p>
+            <button
+              onclick="
+                window.open('https://vi.wikipedia.org/wiki/H%C3%B2n_Mun')
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
+          />
+          <div class="card-content">
+            <h3>VinWonders Nha Trang</h3>
+            <p>Khu du lịch giải trí nổi tiếng trên đảo Hòn Tre.</p>
+            <button onclick="window.open('https://vinwonders.com')">
+              Xem thêm
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LỄ HỘI -->
+
+    <section class="section reveal">
+      <h2>Văn hóa – lễ hội</h2>
+
+      <p>
+        Khánh Hòa có nhiều lễ hội đặc sắc gắn với văn hóa biển và tín ngưỡng
+        truyền thống.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Lễ hội Tháp Bà Ponagar</strong> – lễ hội lớn của người Chăm.
+        </li>
+        <li>
+          <strong>Lễ hội Cầu Ngư</strong> – cầu mong mùa đánh bắt thuận lợi.
+        </li>
+        <li><strong>Festival Biển Nha Trang</strong> – sự kiện du lịch lớn.</li>
+      </ul>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section reveal">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-grid">
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Bún cá Nha Trang',
+              'Món bún nổi tiếng với nước dùng thanh ngọt từ cá biển.',
+            )
+          "
+        >
+          Bún cá Nha Trang
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Nem nướng Ninh Hòa',
+              'Đặc sản nổi tiếng với hương vị đậm đà.',
+            )
+          "
+        >
+          Nem nướng Ninh Hòa
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood('Bánh căn', 'Món bánh dân dã ăn kèm nước chấm đặc trưng.')
+          "
+        >
+          Bánh căn
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Hải sản Nha Trang',
+              'Hải sản tươi ngon như tôm hùm, mực, ốc biển.',
+            )
+          "
+        >
+          Hải sản Nha Trang
+        </div>
+      </div>
+    </section>
+
+    <!-- POPUP -->
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h3 id="foodTitle"></h3>
+        <p id="foodText"></p>
+        <br />
+        <button onclick="closePopup()">Đóng</button>
+      </div>
+    </div>
+
+    <!-- THIÊN NHIÊN -->
+
+    <section class="section reveal">
+      <h2>Thiên nhiên – khí hậu</h2>
+
+      <p>
+        Khánh Hòa có khí hậu <strong>nhiệt đới gió mùa</strong> với nhiều nắng
+        và ít bão, rất thuận lợi cho phát triển <strong>du lịch biển</strong>.
+      </p>
+
+      <p>
+        Tỉnh có nhiều <strong>đảo, vịnh, bãi biển</strong> đẹp cùng hệ sinh thái
+        biển phong phú.
+      </p>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section video reveal">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/3cUFGqHUrq0"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- THÔNG TIN -->
+
+    <section class="section reveal">
+      <h2>Thông tin du lịch</h2>
+
+      <p><strong>Thời gian đẹp nhất:</strong> từ tháng 1 đến tháng 8.</p>
+
+      <p>
+        <strong>Di chuyển:</strong> có thể đến bằng máy bay (sân bay Cam Ranh),
+        tàu hỏa hoặc xe khách.
+      </p>
+    </section>
+
+    <footer>
+      <p>Website giới thiệu các tỉnh thành Việt Nam</p>
+      <p>© 2026</p>
+    </footer>
+
+    <script>
+      function showFood(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("foodTitle").innerText = title;
+        document.getElementById("foodText").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          const height = window.innerHeight;
+
+          if (top < height - 100) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

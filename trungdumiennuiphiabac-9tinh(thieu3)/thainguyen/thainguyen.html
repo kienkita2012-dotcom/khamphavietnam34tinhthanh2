@@ -1,0 +1,356 @@
+```html
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Thái Nguyên – Thủ phủ chè Việt Nam</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #00b4d8;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("thainguyen.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 10px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        font-size: 14px;
+        padding: 0 10px 15px;
+      }
+
+      iframe {
+        border-radius: 15px;
+      }
+
+      footer {
+        background: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Thái Nguyên</b></div>
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Thái Nguyên</h1>
+        <p>Thủ phủ chè và trung tâm văn hóa vùng trung du Bắc Bộ</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Thái Nguyên</b> là một tỉnh thuộc vùng
+        <b>trung du và miền núi phía Bắc Việt Nam</b>, nằm cách
+        <b>Hà Nội khoảng 80 km</b>. Tỉnh có diện tích khoảng <b>3.521 km²</b> và
+        dân số hơn <b>1,3 triệu người</b>.
+      </p>
+
+      <p>
+        Thái Nguyên được biết đến là
+        <b>trung tâm kinh tế, giáo dục và công nghiệp</b>
+        của vùng trung du Bắc Bộ. Đây cũng là nơi đặt nhiều trường đại học lớn
+        như
+        <b>Đại học Thái Nguyên</b>, thu hút sinh viên từ nhiều tỉnh thành đến
+        học tập.
+      </p>
+
+      <p>
+        Ngoài ra, Thái Nguyên còn nổi tiếng trên khắp cả nước với
+        <b>văn hóa trà lâu đời</b>. Những đồi chè xanh mướt trải dài đã giúp nơi
+        đây được mệnh danh là <b>"Thủ phủ chè của Việt Nam"</b>.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Thái%20Nguyên&output=embed"
+        width="100%"
+        height="350"
+      >
+      </iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="ho-nui-coc.jpg" />
+          <div class="card-content">
+            <h3>Hồ Núi Cốc</h3>
+            <p>
+              <b>Hồ Núi Cốc</b> là khu du lịch nổi tiếng của Thái Nguyên với
+              cảnh quan thiên nhiên thơ mộng và gắn liền với
+              <b>truyền thuyết nàng Công – chàng Cốc</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tan-cuong.jpg" />
+          <div class="card-content">
+            <h3>Vùng chè Tân Cương</h3>
+            <p>
+              <b>Tân Cương</b> là vùng chè nổi tiếng nhất Việt Nam với những đồi
+              chè xanh bát ngát và hương vị
+              <b>trà Thái Nguyên đậm đà đặc trưng</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="baotang.jpg" />
+          <div class="card-content">
+            <h3>Bảo tàng Văn hóa các dân tộc Việt Nam</h3>
+            <p>
+              Đây là một trong những bảo tàng lớn nhất cả nước, nơi trưng bày và
+              giới thiệu về
+              <b>văn hóa của 54 dân tộc Việt Nam</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="che-thainguyen.jpg" />
+          <h3>Trà Thái Nguyên</h3>
+          <p>
+            <b>Trà Thái Nguyên</b> nổi tiếng với hương thơm dịu nhẹ và vị chát
+            nhẹ đặc trưng, được xem là <b>loại trà ngon nhất Việt Nam</b>.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="banh-chung-bo.jpg" />
+          <h3>Bánh chưng Bờ Đậu</h3>
+          <p>
+            <b>Bánh chưng Bờ Đậu</b> là đặc sản nổi tiếng với hương vị truyền
+            thống và cách gói bánh rất công phu.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="com-lam.jpg" />
+          <h3>Cơm lam</h3>
+          <p>
+            <b>Cơm lam</b> được nấu trong ống tre, mang hương vị đặc trưng của
+            <b>ẩm thực vùng núi</b>.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="ga-doi.jpg" />
+          <h3>Gà đồi</h3>
+          <p>
+            <b>Gà đồi Thái Nguyên</b> có thịt chắc, thơm và thường được chế biến
+            thành nhiều món ngon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THIÊN NHIÊN -->
+
+    <section class="section">
+      <h2>Thiên nhiên – Khí hậu</h2>
+
+      <p>
+        Thái Nguyên có địa hình chủ yếu là
+        <b>đồi núi thấp và trung du</b>, tạo điều kiện thuận lợi cho việc trồng
+        chè và phát triển nông nghiệp.
+      </p>
+
+      <p>
+        Khí hậu mang đặc điểm <b>nhiệt đới gió mùa</b>, mùa hè nóng ẩm và mùa
+        đông khá lạnh.
+      </p>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/wbxWhKte5z0"
+        title="Video giới thiệu"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- DU LỊCH -->
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Thái Nguyên bằng
+        <b>xe khách, ô tô hoặc xe máy</b> từ Hà Nội.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Khoảng thời gian từ
+        <b>tháng 3 đến tháng 5</b> và <b>tháng 9 đến tháng 11</b>
+        là lúc thời tiết dễ chịu và cảnh quan thiên nhiên đẹp.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>
+```

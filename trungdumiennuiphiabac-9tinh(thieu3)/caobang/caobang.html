@@ -1,0 +1,347 @@
+```html
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cao Bằng – Vùng đất non nước Đông Bắc</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #00b4d8;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("caobang.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 10px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        font-size: 14px;
+        padding: 0 10px 15px;
+      }
+
+      iframe {
+        border-radius: 15px;
+      }
+
+      footer {
+        background: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Cao Bằng</b></div>
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Cao Bằng</h1>
+        <p>Vùng đất non nước hùng vĩ của Đông Bắc Việt Nam</p>
+      </div>
+    </section>
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Cao Bằng</b> là một tỉnh thuộc vùng <b>Đông Bắc Việt Nam</b>, nằm ở
+        khu vực biên giới phía Bắc và giáp với <b>Trung Quốc</b>. Tỉnh có diện
+        tích khoảng <b>6.700 km²</b> với dân số hơn <b>500.000 người</b>.
+      </p>
+
+      <p>
+        Đây là vùng đất nổi tiếng với <b>thiên nhiên hùng vĩ</b>, nhiều dãy núi
+        đá vôi, hang động kỳ bí và những con sông thơ mộng. Cao Bằng còn được
+        biết đến là nơi gắn liền với nhiều
+        <b>sự kiện lịch sử quan trọng của cách mạng Việt Nam</b>.
+      </p>
+
+      <p>
+        Tỉnh là nơi sinh sống của nhiều dân tộc như
+        <b>Tày, Nùng, Dao, H'Mông</b>, tạo nên một nền
+        <b>văn hóa đa dạng và giàu bản sắc</b>. Những bản làng truyền thống,
+        trang phục dân tộc và các lễ hội đặc sắc đã góp phần thu hút du khách
+        đến khám phá vùng đất này.
+      </p>
+
+      <p>
+        Đặc biệt, Cao Bằng còn nổi tiếng với
+        <b>Công viên địa chất toàn cầu UNESCO Non Nước Cao Bằng</b> – một trong
+        những khu vực có giá trị địa chất và cảnh quan thiên nhiên đặc biệt của
+        Việt Nam.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Cao%20Bằng&output=embed"
+        width="100%"
+        height="350"
+      >
+      </iframe>
+    </section>
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="ban-gioc.jpg" />
+          <div class="card-content">
+            <h3>Thác Bản Giốc</h3>
+            <p>
+              <b>Thác Bản Giốc</b> là một trong những thác nước
+              <b>đẹp và lớn nhất Đông Nam Á</b>, nằm trên dòng
+              <b>sông Quây Sơn</b>. Cảnh quan nơi đây hùng vĩ với dòng nước
+              trắng xóa đổ xuống giữa núi rừng xanh mát.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="pacbo.jpg" />
+          <div class="card-content">
+            <h3>Khu di tích Pác Bó</h3>
+            <p>
+              <b>Pác Bó</b> là di tích lịch sử nổi tiếng gắn liền với
+              <b>Chủ tịch Hồ Chí Minh</b>. Đây là nơi Bác Hồ sống và làm việc
+              khi trở về nước lãnh đạo cách mạng năm <b>1941</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="ho-thang-hen.jpg" />
+          <div class="card-content">
+            <h3>Hồ Thang Hen</h3>
+            <p>
+              <b>Hồ Thang Hen</b> là hồ nước tự nhiên nằm giữa núi đá vôi với
+              làn nước xanh trong quanh năm, tạo nên cảnh quan thiên nhiên
+              <b>thanh bình và thơ mộng</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="banhcuon-caobang.jpg" />
+          <h3>Bánh cuốn Cao Bằng</h3>
+          <p>
+            <b>Bánh cuốn Cao Bằng</b> có hương vị đặc biệt khi ăn cùng
+            <b>nước dùng xương nóng</b> thay vì nước mắm.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="vitquay7vi.jpg" />
+          <h3>Vịt quay 7 vị</h3>
+          <p>
+            <b>Vịt quay 7 vị</b> là món đặc sản nổi tiếng với lớp da giòn và
+            hương vị đậm đà từ nhiều loại gia vị truyền thống.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="lapxuong.jpg" />
+          <h3>Lạp xưởng Cao Bằng</h3>
+          <p>
+            <b>Lạp xưởng</b> được làm từ thịt lợn tươi và hun khói theo phương
+            pháp truyền thống của người dân địa phương.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="khaunhuc.jpg" />
+          <h3>Khâu nhục</h3>
+          <p>
+            <b>Khâu nhục</b> là món ăn truyền thống của người Tày và Nùng, được
+            chế biến cầu kỳ với thịt ba chỉ hấp mềm cùng nhiều gia vị đặc trưng.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Thiên nhiên – Khí hậu</h2>
+
+      <p>
+        Cao Bằng có địa hình chủ yếu là <b>núi đá vôi và thung lũng</b>, tạo nên
+        cảnh quan thiên nhiên hùng vĩ với nhiều hang động và thác nước đẹp.
+      </p>
+
+      <p>
+        Khí hậu nơi đây mang đặc trưng <b>nhiệt đới gió mùa miền núi</b>, mùa hè
+        mát mẻ và mùa đông khá lạnh. Thời tiết dễ chịu đã giúp Cao Bằng trở
+        thành điểm du lịch sinh thái hấp dẫn.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/pRgZyZ_0MTQ"
+        title="Video giới thiệu"
+        allowfullscreen>
+    </iframe>
+      </iframe>
+    </section>
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Từ <b>Hà Nội</b>, du khách có thể đi
+        <b>xe khách hoặc ô tô</b> theo tuyến đường khoảng <b>280 km</b> để đến
+        thành phố Cao Bằng.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Khoảng từ <b>tháng 9 đến tháng 11</b> khi
+        thác Bản Giốc nhiều nước và cảnh sắc thiên nhiên rất đẹp.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>
+```

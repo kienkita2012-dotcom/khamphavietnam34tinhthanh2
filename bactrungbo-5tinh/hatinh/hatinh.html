@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hà Tĩnh – Vùng đất văn hiến miền Trung</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f4fbff;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #023e8a;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+            center/cover;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 14px;
+        background: #0077b6;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+      }
+
+      .btn:hover {
+        background: #023e8a;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 15px 10px;
+        color: #0077b6;
+      }
+
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 400px;
+        text-align: center;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      footer {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 80px;
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .food-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Hà Tĩnh</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#lehoi">Lễ hội</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="#dulich">Du lịch</a>
+        <a href="../../MIENTRUNG.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Hà Tĩnh</h1>
+        <p>Vùng đất văn hiến và truyền thống hiếu học</p>
+      </div>
+    </section>
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Hà Tĩnh</b> là một tỉnh nằm ở khu vực <b>Bắc Trung Bộ</b> của Việt
+        Nam. Tỉnh có diện tích khoảng <b>6.000 km²</b> và dân số hơn
+        <b>1,2 triệu người</b>. Hà Tĩnh nằm giữa hai trung tâm lớn là
+        <b>Nghệ An</b> và <b>Quảng Bình</b>.
+      </p>
+
+      <p>
+        Phía bắc Hà Tĩnh giáp <b>Nghệ An</b>, phía nam giáp <b>Quảng Bình</b>,
+        phía tây giáp <b>Lào</b> và phía đông giáp <b>Biển Đông</b> với đường bờ
+        biển dài gần <b>137 km</b>.
+      </p>
+
+      <p>
+        Hà Tĩnh nổi tiếng là vùng đất <b>giàu truyền thống văn hóa</b>, quê
+        hương của nhiều danh nhân lịch sử như <b>Nguyễn Du</b> – tác giả của tác
+        phẩm <b>Truyện Kiều</b> nổi tiếng trong văn học Việt Nam.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Ha+Tinh&output=embed"
+        width="100%"
+        height="350"
+      ></iframe>
+    </section>
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+          />
+
+          <div class="card-content">
+            <h3>Biển Thiên Cầm</h3>
+
+            <p>
+              Một trong những <b>bãi biển đẹp nhất miền Trung</b> với bãi cát
+              trắng mịn, nước biển trong xanh và phong cảnh hoang sơ.
+            </p>
+
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Bi%E1%BB%83n_Thi%C3%AAn_C%E1%BA%A7m"
+              target="_blank"
+            >
+              Tìm hiểu thêm
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1528127269322-539801943592"
+          />
+
+          <div class="card-content">
+            <h3>Ngã ba Đồng Lộc</h3>
+
+            <p>
+              Khu di tích lịch sử nổi tiếng gắn liền với câu chuyện về
+              <b>10 nữ thanh niên xung phong anh dũng</b> trong thời kỳ kháng
+              chiến.
+            </p>
+
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Ng%C3%A3_ba_%C4%90%E1%BB%93ng_L%E1%BB%99c"
+              target="_blank"
+            >
+              Tìm hiểu thêm
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+          />
+
+          <div class="card-content">
+            <h3>Khu lưu niệm Nguyễn Du</h3>
+
+            <p>
+              Nơi tưởng niệm <b>Đại thi hào Nguyễn Du</b>, tác giả của
+              <b>Truyện Kiều</b>, một kiệt tác của văn học Việt Nam.
+            </p>
+
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Nguy%E1%BB%85n_Du"
+              target="_blank"
+            >
+              Tìm hiểu thêm
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lehoi" class="section">
+      <h2>Văn hóa – lễ hội</h2>
+
+      <p>
+        Hà Tĩnh là vùng đất có <b>nền văn hóa truyền thống lâu đời</b> với nhiều
+        lễ hội gắn liền với lịch sử và tín ngưỡng của người dân địa phương.
+      </p>
+
+      <p>
+        Một trong những lễ hội nổi bật là
+        <b>Lễ hội đền Chế Thắng Phu Nhân Nguyễn Thị Bích Châu</b>, được tổ chức
+        nhằm tưởng nhớ một vị nữ tướng tài giỏi trong lịch sử.
+      </p>
+
+      <p>
+        Ngoài ra còn có các lễ hội đặc sắc khác như
+        <b>Lễ hội Hải Thượng Lãn Ông</b>, <b>Lễ hội chùa Hương Tích</b> và nhiều
+        lễ hội truyền thống của ngư dân vùng biển.
+      </p>
+    </section>
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Kẹo cu đơ',
+              'Đặc sản nổi tiếng của Hà Tĩnh làm từ lạc, mật mía và bánh tráng, có vị ngọt và giòn.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+          />
+
+          <h3>Kẹo cu đơ</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Bánh bèo Hà Tĩnh',
+              'Bánh làm từ bột gạo, ăn kèm tôm khô và nước mắm đậm đà.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+          />
+
+          <h3>Bánh bèo</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Gỏi cá đục',
+              'Món ăn đặc sản vùng biển Hà Tĩnh với cá tươi trộn cùng các loại gia vị.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1604908176997-4311b1eab5b7"
+          />
+
+          <h3>Gỏi cá đục</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Cam bù Hương Sơn',
+              'Loại cam đặc sản nổi tiếng của Hà Tĩnh với vị ngọt và hương thơm đặc trưng.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1589927986089-35812388d1f4"
+          />
+
+          <h3>Cam bù</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/Enl_RgoFD0A"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <section id="dulich" class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Hà Tĩnh bằng
+        <b>đường bộ qua Quốc lộ 1A</b>,
+        <b>tàu hỏa đến ga Yên Trung hoặc ga Vinh</b>, hoặc
+        <b>máy bay đến sân bay Vinh</b> rồi di chuyển tiếp.
+      </p>
+
+      <p>
+        <b>Thời gian du lịch đẹp nhất:</b>
+        Từ <b>tháng 4 đến tháng 8</b> là thời điểm thích hợp để du lịch biển
+        <b>Thiên Cầm</b>. Nếu muốn khám phá văn hóa và lễ hội, bạn có thể đến
+        vào mùa xuân.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+
+        <h3 id="popup-title"></h3>
+
+        <p id="popup-text"></p>
+      </div>
+    </div>
+
+    <script>
+      function openPopup(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("popup-title").innerText = title;
+        document.getElementById("popup-text").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

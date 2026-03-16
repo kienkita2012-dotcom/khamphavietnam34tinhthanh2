@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hưng Yên – Vùng đất Phố Hiến xưa</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #023e8a;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("hungyen.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 15px 10px 5px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        padding: 0 10px 15px;
+        font-size: 14px;
+      }
+
+      iframe {
+        border-radius: 15px;
+      }
+
+      footer {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 80px;
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .food-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero h1 {
+          font-size: 45px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Hưng Yên</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#lichsu">Lịch sử</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Hưng Yên</h1>
+        <p>Vùng đất Phố Hiến xưa – giàu truyền thống văn hóa</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Hưng Yên</b> là một tỉnh thuộc <b>đồng bằng sông Hồng</b>, nằm ở
+        trung tâm của vùng kinh tế trọng điểm Bắc Bộ và cách
+        <b>Hà Nội khoảng 60 km</b>. Với diện tích hơn <b>930 km²</b> và dân số
+        khoảng <b>1,2 triệu người</b>, Hưng Yên là vùng đất có lịch sử lâu đời
+        và truyền thống văn hóa đặc sắc.
+      </p>
+
+      <p>
+        Tỉnh nằm bên <b>sông Hồng</b> trù phú, có điều kiện thuận lợi cho phát
+        triển <b>nông nghiệp, thương mại và du lịch</b>. Hưng Yên còn nổi tiếng
+        với nhiều <b>làng nghề truyền thống</b> và các di tích lịch sử cổ kính.
+      </p>
+
+      <p>
+        Đặc biệt, Hưng Yên từng là nơi tồn tại của <b>Phố Hiến</b> – một
+        <b>thương cảng sầm uất bậc nhất Việt Nam vào thế kỷ XVII</b>. Nơi đây
+        từng được ví với câu nói nổi tiếng:
+        <b>"Thứ nhất kinh kỳ, thứ nhì Phố Hiến"</b>.
+      </p>
+    </section>
+
+    <!-- LỊCH SỬ -->
+
+    <section id="lichsu" class="section">
+      <h2>Lịch sử Hưng Yên</h2>
+
+      <p>
+        Vào khoảng <b>thế kỷ XVII</b>, Phố Hiến là một trong những
+        <b>trung tâm thương mại quốc tế quan trọng</b> của Đại Việt. Nhiều
+        thương nhân đến từ <b>Trung Quốc, Nhật Bản, Hà Lan, Bồ Đào Nha</b> đã
+        đến đây buôn bán và sinh sống.
+      </p>
+
+      <p>
+        Nhờ sự giao thương sầm uất, Phố Hiến nhanh chóng phát triển thành một
+        <b>đô thị thương mại lớn</b>, nơi hội tụ nhiều nền văn hóa khác nhau và
+        để lại nhiều di tích kiến trúc độc đáo cho đến ngày nay.
+      </p>
+
+      <p>
+        Hiện nay, nhiều công trình lịch sử tại Phố Hiến vẫn còn được bảo tồn và
+        trở thành <b>điểm du lịch văn hóa nổi tiếng</b> của tỉnh Hưng Yên.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Hưng%20Yên&output=embed"
+        width="100%"
+        height="350"
+      ></iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="pho-hien.jpg" />
+          <div class="card-content">
+            <h3>Phố Hiến</h3>
+            <p>
+              Khu di tích lịch sử nổi tiếng gắn liền với
+              <b>thương cảng Phố Hiến</b> sầm uất trong lịch sử Việt Nam.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="chua-chuong.jpg" />
+          <div class="card-content">
+            <h3>Chùa Chuông</h3>
+            <p>
+              Một trong những ngôi chùa đẹp nhất Phố Hiến, được mệnh danh là
+              <b>"Phố Hiến đệ nhất danh thắng"</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="den-mau.jpg" />
+          <div class="card-content">
+            <h3>Đền Mẫu</h3>
+            <p>
+              Ngôi đền linh thiêng thờ <b>Dương Quý Phi</b>, thu hút nhiều du
+              khách và người dân đến lễ bái.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="nhanlong.jpg" />
+          <h3>Nhãn lồng Hưng Yên</h3>
+          <p>Đặc sản nổi tiếng với <b>quả to, cùi dày, vị ngọt thơm</b>.</p>
+        </div>
+
+        <div class="food-card">
+          <img src="banhcuonphu.jpg" />
+          <h3>Bánh cuốn Phú Thị</h3>
+          <p>Bánh cuốn mềm mịn ăn kèm <b>chả và nước mắm đậm đà</b>.</p>
+        </div>
+
+        <div class="food-card">
+          <img src="ga-dong-tao.jpg" />
+          <h3>Gà Đông Tảo</h3>
+          <p>Giống gà quý nổi tiếng với <b>đôi chân to đặc trưng</b>.</p>
+        </div>
+
+        <div class="food-card">
+          <img src="che-sen.jpg" />
+          <h3>Chè sen long nhãn</h3>
+          <p>Món tráng miệng thanh mát kết hợp <b>nhãn lồng và hạt sen</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/nMfcm-EHNUg"
+        title="Video giới thiệu"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- DU LỊCH -->
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Hưng Yên từ Hà Nội bằng
+        <b>xe khách, ô tô hoặc xe máy</b> chỉ trong khoảng <b>1 – 1,5 giờ</b>.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Mùa hè từ <b>tháng 6 – tháng 8</b> là mùa
+        nhãn chín, du khách có thể thưởng thức
+        <b>nhãn lồng Hưng Yên nổi tiếng</b>.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>

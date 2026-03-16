@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hà Nội – Thủ đô ngàn năm văn hiến</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #023e8a;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("hanoi.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      /* CARD */
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      /* FOOD */
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .food-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 15px 10px 5px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        padding: 0 10px 15px;
+        font-size: 14px;
+      }
+
+      /* MAP */
+
+      iframe {
+        max-width: 100%;
+        border-radius: 15px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 80px;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .food-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero h1 {
+          font-size: 45px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Hà Nội</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#lichsu">Lịch sử</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Hà Nội</h1>
+        <p>Thủ đô ngàn năm văn hiến của Việt Nam</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        Hà Nội là thủ đô của Việt Nam và là một trong những thành phố có lịch sử
+        lâu đời nhất ở Đông Nam Á. Thành phố nằm ở trung tâm đồng bằng sông Hồng
+        và là trung tâm chính trị, kinh tế, văn hóa và giáo dục quan trọng của
+        cả nước.
+      </p>
+
+      <br />
+
+      <p>
+        Với hơn 1000 năm lịch sử, Hà Nội sở hữu nhiều di tích lịch sử, công
+        trình kiến trúc cổ kính, phố cổ đặc trưng và nền văn hóa truyền thống
+        phong phú. Đây cũng là điểm đến du lịch nổi tiếng thu hút hàng triệu du
+        khách mỗi năm.
+      </p>
+    </section>
+
+    <section id="lichsu" class="section">
+      <h2>Lịch sử Hà Nội</h2>
+
+      <p>
+        Hà Nội có lịch sử hơn 1000 năm. Năm 1010, vua Lý Thái Tổ quyết định dời
+        đô từ Hoa Lư ra thành Đại La và đổi tên thành Thăng Long, mở đầu cho sự
+        phát triển lâu dài của kinh đô này. Theo truyền thuyết, khi thuyền của
+        vua đến Đại La đã xuất hiện hình ảnh rồng bay lên trời nên nhà vua đặt
+        tên là Thăng Long (rồng bay). :contentReference[oaicite:0]{index=0}
+      </p>
+
+      <p>
+        Trải qua nhiều triều đại như Lý, Trần, Lê và Nguyễn, Thăng Long – Hà Nội
+        luôn là trung tâm chính trị và văn hóa quan trọng của đất nước. Đến năm
+        1831, vua Minh Mạng chính thức đặt tên thành phố là Hà Nội, và từ đó cái
+        tên này được sử dụng cho đến ngày nay.
+      </p>
+
+      <p>
+        <a
+          href="https://vi.wikipedia.org/wiki/H%C3%A0_N%E1%BB%99i#L%E1%BB%8Bch_s%E1%BB%AD"
+          target="_blank"
+          style="color: #0077b6; font-weight: 600"
+        >
+          Xem chi tiết lịch sử Hà Nội →
+        </a>
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Hà+Nội&output=embed"
+        width="100%"
+        height="350"
+      >
+      </iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="ho-guom.jpg" />
+          <div class="card-content">
+            <h3>Hồ Gươm</h3>
+            <p>
+              Biểu tượng nổi tiếng của Hà Nội gắn với truyền thuyết vua Lê trả
+              gươm cho Rùa thần.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="langbac.jpg" />
+          <div class="card-content">
+            <h3>Lăng Chủ tịch Hồ Chí Minh</h3>
+            <p>
+              Nơi an nghỉ của Chủ tịch Hồ Chí Minh và là địa điểm tham quan lịch
+              sử quan trọng.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="chua-mot-cot.jpg" />
+          <div class="card-content">
+            <h3>Chùa Một Cột</h3>
+            <p>
+              Ngôi chùa cổ nổi tiếng với kiến trúc độc đáo như một đóa sen nở
+              trên mặt nước.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="phobo.jpg" />
+          <h3>Phở Hà Nội</h3>
+          <p>
+            Món ăn nổi tiếng với nước dùng thơm, bánh phở mềm và thịt bò đậm vị.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="buncha.jpg" />
+          <h3>Bún chả</h3>
+          <p>Món bún ăn kèm thịt nướng, rau sống và nước mắm chua ngọt.</p>
+        </div>
+
+        <div class="food-card">
+          <img src="banhcuon.jpg" />
+          <h3>Bánh cuốn</h3>
+          <p>Bánh mỏng mềm ăn kèm chả quế và nước mắm đậm đà.</p>
+        </div>
+
+        <div class="food-card">
+          <img src="comlangvong.jpg" />
+          <h3>Cốm làng Vòng</h3>
+          <p>Đặc sản nổi tiếng của Hà Nội với hương vị thơm dịu từ lúa non.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section video">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/FClS4ni4zfo"
+        title="Video giới thiệu Hà Nội"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+        "
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- THÔNG TIN DU LỊCH -->
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Hà Nội có sân bay quốc tế Nội Bài cùng hệ thống
+        đường bộ, đường sắt thuận tiện kết nối với nhiều tỉnh thành.
+      </p>
+
+      <br />
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Mùa thu từ tháng 9 – 11 là thời điểm đẹp nhất
+        để du lịch Hà Nội với thời tiết mát mẻ và cảnh sắc lãng mạn.
+      </p>
+
+      <br />
+
+      <p>
+        <b>Đặc sản nổi bật:</b> Phở, bún chả, bánh cuốn, cốm làng Vòng, bún
+        thang và chả cá Lã Vọng là những món ăn nổi tiếng của Hà Nội.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>

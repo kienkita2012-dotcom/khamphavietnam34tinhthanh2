@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cà Mau</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f5f7f9;
+        color: #333;
+        line-height: 1.7;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 60px;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        z-index: 1000;
+        backdrop-filter: blur(6px);
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 100vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e")
+            center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      /* SECTION */
+
+      .section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 90px 20px;
+      }
+
+      .section h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+        color: #2c3e50;
+      }
+
+      .section p {
+        margin-bottom: 16px;
+      }
+
+      /* CARD */
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 16px;
+      }
+
+      .card button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        border: none;
+        background: #3498db;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      /* FOOD */
+
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .food {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .food:hover {
+        background: #ecf5ff;
+        transform: translateY(-4px);
+      }
+
+      /* POPUP */
+
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        max-width: 420px;
+        text-align: center;
+        position: relative;
+        animation: popup 0.3s ease;
+      }
+
+      @keyframes popup {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+        color: #777;
+      }
+
+      /* VIDEO */
+
+      .video iframe {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 40px;
+      }
+
+      /* SCROLL */
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div><b>Việt Nam</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#danhlam">Danh lam</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENNAM.html">Trang chủ</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div>
+        <h1>Cà Mau</h1>
+        <p>Vùng đất cực Nam của Tổ quốc Việt Nam</p>
+      </div>
+    </section>
+
+    <section id="gioithieu" class="section reveal">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <strong>Cà Mau</strong> là tỉnh nằm ở cực Nam của Việt Nam, thuộc khu
+        vực <strong>Đồng bằng sông Cửu Long</strong>. Tỉnh được bao quanh bởi
+        biển ở ba phía với hệ sinh thái rừng ngập mặn và rừng tràm rộng lớn.
+      </p>
+
+      <p>
+        Cà Mau có diện tích khoảng <strong>5.300 km²</strong> với dân số hơn
+        <strong>1,2 triệu người</strong>. Nơi đây nổi tiếng với hệ sinh thái tự
+        nhiên đa dạng, đặc biệt là
+        <strong>rừng ngập mặn và các khu bảo tồn thiên nhiên</strong>.
+      </p>
+
+      <p>
+        Ngoài ra, Cà Mau còn là điểm du lịch nổi tiếng với
+        <strong>Mũi Cà Mau</strong> – nơi đặt cột mốc cực Nam của Tổ quốc. Du
+        khách đến đây có thể khám phá thiên nhiên hoang sơ, thưởng thức hải sản
+        tươi ngon và trải nghiệm văn hóa miền sông nước.
+      </p>
+    </section>
+
+    <section class="section reveal">
+      <h2>Bản đồ</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Ca%20Mau&output=embed"
+        width="100%"
+        height="400"
+      >
+      </iframe>
+    </section>
+
+    <section id="danhlam" class="section reveal">
+      <h2>Danh lam thắng cảnh</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
+          />
+          <div class="card-content">
+            <h3>Mũi Cà Mau</h3>
+            <p>
+              Điểm cực Nam của Việt Nam với cột mốc tọa độ quốc gia và cảnh quan
+              thiên nhiên đặc trưng.
+            </p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/M%C5%A9i_C%C3%A0_Mau',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"
+          />
+          <div class="card-content">
+            <h3>Vườn quốc gia U Minh Hạ</h3>
+            <p>
+              Khu rừng tràm rộng lớn với hệ sinh thái đa dạng và nhiều loài động
+              thực vật quý hiếm.
+            </p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/V%C6%B0%E1%BB%9Dn_qu%E1%BB%91c_gia_U_Minh_H%E1%BA%A1',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+          />
+          <div class="card-content">
+            <h3>Hòn Đá Bạc</h3>
+            <p>
+              Quần đảo nhỏ nổi tiếng với cảnh quan đá tự nhiên và nhiều câu
+              chuyện lịch sử.
+            </p>
+            <button
+              onclick="
+                window.open(
+                  'https://vi.wikipedia.org/wiki/H%C3%B2n_%C4%90%C3%A1_B%E1%BA%A1c',
+                )
+              "
+            >
+              Xem thêm
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amthuc" class="section reveal">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-grid">
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Cua Cà Mau',
+              'Đặc sản nổi tiếng nhất của Cà Mau với thịt cua chắc, ngọt và rất giàu dinh dưỡng.',
+            )
+          "
+        >
+          Cua Cà Mau
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Ba khía Rạch Gốc',
+              'Món ăn đặc trưng miền biển được muối và chế biến thành nhiều món hấp dẫn.',
+            )
+          "
+        >
+          Ba khía Rạch Gốc
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Lẩu mắm miền Tây',
+              'Món lẩu đậm đà hương vị với nhiều loại cá, tôm và rau đặc trưng miền Tây.',
+            )
+          "
+        >
+          Lẩu mắm
+        </div>
+
+        <div
+          class="food"
+          onclick="
+            showFood(
+              'Bánh tằm cay',
+              'Món ăn đặc sản với nước dùng cay nhẹ và hương vị đặc trưng của vùng đất Cà Mau.',
+            )
+          "
+        >
+          Bánh tằm cay
+        </div>
+      </div>
+    </section>
+
+    <div class="popup" id="popup" onclick="closePopup()">
+      <div class="popup-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closePopup()">✖</span>
+
+        <h3 id="foodTitle"></h3>
+        <p id="foodText"></p>
+      </div>
+    </div>
+
+    <section class="section video reveal">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/TIa-6kSA45Q"
+        title="Video du lịch"
+        frameborder="0"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <section class="section reveal">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <strong>Thời gian đẹp nhất:</strong> từ tháng 12 đến tháng 4 khi thời
+        tiết khô ráo và thuận lợi cho tham quan.
+      </p>
+
+      <p>
+        <strong>Di chuyển:</strong> có thể đến Cà Mau bằng máy bay đến sân bay
+        Cà Mau hoặc đi ô tô từ TP. Hồ Chí Minh.
+      </p>
+
+      <p>
+        <strong>Trải nghiệm nổi bật:</strong> check-in Mũi Cà Mau, khám phá rừng
+        U Minh Hạ và thưởng thức hải sản tươi sống.
+      </p>
+    </section>
+
+    <footer>
+      <p>Website khám phá các tỉnh thành Việt Nam</p>
+      <p>© 2026</p>
+    </footer>
+
+    <script>
+      function showFood(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("foodTitle").innerText = title;
+        document.getElementById("foodText").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          const height = window.innerHeight;
+
+          if (top < height - 100) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

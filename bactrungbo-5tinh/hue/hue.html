@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Huế – Cố đô di sản của Việt Nam</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f4fbff;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #023e8a;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1606813909358-98f93b41c3b8")
+            center/cover;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 14px;
+        background: #0077b6;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .btn:hover {
+        background: #023e8a;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 15px 10px;
+        color: #0077b6;
+      }
+
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 400px;
+        text-align: center;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      footer {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 80px;
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .food-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Huế</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#lehoi">Lễ hội</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="#dulich">Du lịch</a>
+        <a href="MIENTRUNG.html">trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Huế</h1>
+        <p>Cố đô di sản và trung tâm văn hóa của Việt Nam</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Huế</b> là thành phố thuộc miền Trung Việt Nam và từng là
+        <b>kinh đô của triều Nguyễn từ năm 1802 đến năm 1945</b>. Thành phố nằm
+        bên dòng <b>sông Hương thơ mộng</b> và nổi tiếng với hệ thống
+        <b>di tích lịch sử, cung điện và lăng tẩm cổ kính</b>.
+      </p>
+
+      <p>
+        Huế là nơi lưu giữ nhiều giá trị văn hóa truyền thống của Việt Nam, đặc
+        biệt là <b>văn hóa cung đình</b>, <b>nhã nhạc cung đình Huế</b>
+        và nhiều lễ hội truyền thống đặc sắc.
+      </p>
+
+      <p>
+        Quần thể <b>Di tích Cố đô Huế</b> đã được
+        <b>UNESCO công nhận là Di sản Văn hóa Thế giới</b> vào năm 1993, trở
+        thành điểm đến du lịch nổi tiếng của Việt Nam.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Huế&output=embed"
+        width="100%"
+        height="350"
+      ></iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1597149951483-9d3db9b0ffc3"
+          />
+          <div class="card-content">
+            <h3>Đại Nội Huế</h3>
+            <p>
+              Khu <b>Hoàng thành của triều Nguyễn</b> với nhiều cung điện, đền
+              đài và cổng thành cổ kính.
+            </p>
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Hoàng_thành_Huế"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1606813909358-98f93b41c3b8"
+          />
+          <div class="card-content">
+            <h3>Chùa Thiên Mụ</h3>
+            <p>
+              Ngôi chùa cổ nổi tiếng nằm bên
+              <b>sông Hương</b>, được xem là biểu tượng của Huế.
+            </p>
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Chùa_Thiên_Mụ"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1605152276897-4f618f831968"
+          />
+          <div class="card-content">
+            <h3>Lăng Khải Định</h3>
+            <p>
+              Một trong những <b>lăng tẩm đẹp nhất triều Nguyễn</b> với kiến
+              trúc kết hợp Đông và Tây.
+            </p>
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Lăng_Khải_Định"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LỄ HỘI -->
+
+    <section id="lehoi" class="section">
+      <h2>Văn hóa – lễ hội</h2>
+
+      <p>
+        Huế nổi tiếng với <b>Festival Huế</b> – lễ hội văn hóa quốc tế được tổ
+        chức định kỳ nhằm tôn vinh các giá trị
+        <b>di sản văn hóa và nghệ thuật truyền thống</b>.
+      </p>
+
+      <p>
+        Ngoài ra còn có nhiều hoạt động văn hóa đặc sắc như
+        <b>ca Huế trên sông Hương</b>, biểu diễn
+        <b>nhã nhạc cung đình Huế</b> và các lễ hội truyền thống của người dân
+        địa phương.
+      </p>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Bún bò Huế',
+              'Món ăn nổi tiếng với nước dùng đậm đà, thơm mùi sả và vị cay đặc trưng.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1604908176997-4311b1eab5b7"
+          />
+          <h3>Bún bò Huế</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Bánh bèo',
+              'Món bánh nhỏ ăn kèm tôm chấy và nước mắm đặc trưng của Huế.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+          />
+          <h3>Bánh bèo</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Bánh khoái',
+              'Món bánh chiên giòn ăn kèm rau sống và nước chấm đặc biệt.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+          />
+          <h3>Bánh khoái</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Chè Huế',
+              'Huế nổi tiếng với nhiều loại chè cung đình thơm ngon và đa dạng.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1585032226651-759b368d7246"
+          />
+          <h3>Chè Huế</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/Wq0yG11iKvg"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- DU LỊCH -->
+
+    <section id="dulich" class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể đến Huế bằng
+        <b>máy bay (sân bay Phú Bài)</b>, <b>tàu hỏa</b> hoặc <b>xe khách</b>.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Từ <b>tháng 1 – tháng 4</b>
+        khi thời tiết mát mẻ và ít mưa.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+        <h3 id="popup-title"></h3>
+        <p id="popup-text"></p>
+      </div>
+    </div>
+
+    <script>
+      function openPopup(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("popup-title").innerText = title;
+        document.getElementById("popup-text").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

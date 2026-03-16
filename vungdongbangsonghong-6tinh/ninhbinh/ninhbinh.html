@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ninh Bình – Vùng đất di sản</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(180deg, #f4fbff, #e8f6ff);
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #023e8a;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+          url("ninhbinh.jpg") center/cover no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 15px 10px 5px;
+        color: #0077b6;
+      }
+
+      .food-card p {
+        padding: 0 10px 15px;
+        font-size: 14px;
+      }
+
+      iframe {
+        border-radius: 15px;
+      }
+
+      footer {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 80px;
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .food-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero h1 {
+          font-size: 45px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Ninh Bình</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#lichsu">Lịch sử</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="../../MIENBAC.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Ninh Bình</h1>
+        <p>Vùng đất di sản thiên nhiên và lịch sử của Việt Nam</p>
+      </div>
+    </section>
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Ninh Bình</b> là tỉnh nằm ở
+        <b>cửa ngõ cực Nam của vùng đồng bằng sông Hồng</b>, cách
+        <b>thủ đô Hà Nội khoảng 90 km</b>. Tỉnh có diện tích khoảng
+        <b>1.386 km²</b> và dân số hơn <b>1 triệu người</b>. Nhờ vị trí đặc biệt
+        giữa <b>đồng bằng, núi đá vôi và vùng ven biển</b>, Ninh Bình sở hữu
+        cảnh quan thiên nhiên vô cùng đa dạng.
+      </p>
+
+      <p>
+        Nơi đây nổi tiếng với các dãy <b>núi đá vôi hùng vĩ</b>, hệ thống
+        <b>sông ngòi uốn lượn</b> và những cánh đồng lúa xanh mướt. Chính vì
+        vậy, Ninh Bình thường được du khách gọi bằng cái tên
+        <b>"Vịnh Hạ Long trên cạn"</b>.
+      </p>
+
+      <p>
+        Không chỉ có thiên nhiên đẹp, Ninh Bình còn là vùng đất
+        <b>giàu giá trị lịch sử và văn hóa</b>. Đây từng là
+        <b>kinh đô đầu tiên của nhà nước phong kiến tập quyền ở Việt Nam</b>,
+        gắn liền với các triều đại <b>Đinh – Tiền Lê – đầu thời Lý</b>.
+      </p>
+    </section>
+
+    <section id="lichsu" class="section">
+      <h2>Lịch sử Ninh Bình</h2>
+
+      <p>
+        Vào thế kỷ X, vùng đất Ninh Bình trở thành trung tâm chính trị của đất
+        nước khi <b>Đinh Bộ Lĩnh lên ngôi hoàng đế</b> và lập nên nhà
+        <b>Đinh</b>. Kinh đô được đặt tại <b>Hoa Lư</b> – một khu vực được bao
+        bọc bởi <b>núi đá và sông ngòi tự nhiên</b>, rất thuận lợi cho việc
+        phòng thủ.
+      </p>
+
+      <p>
+        Sau khi thống nhất đất nước vào năm <b>968</b>,
+        <b>Đinh Tiên Hoàng</b> đã xây dựng Hoa Lư thành
+        <b>kinh đô của nước Đại Cồ Việt</b>. Đây là cột mốc quan trọng đánh dấu
+        sự <b>hình thành nhà nước phong kiến độc lập</b> của Việt Nam.
+      </p>
+
+      <p>
+        Ngày nay, khu di tích <b>Cố đô Hoa Lư</b>
+        vẫn còn lưu giữ nhiều công trình lịch sử, đền thờ và di tích cổ, trở
+        thành một trong những
+        <b>điểm du lịch lịch sử nổi tiếng nhất Việt Nam</b>.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Ninh%20Bình&output=embed"
+        width="100%"
+        height="350"
+      >
+      </iframe>
+    </section>
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img src="trangan.jpg" />
+          <div class="card-content">
+            <h3>Quần thể danh thắng Tràng An</h3>
+            <p>
+              <b>Tràng An</b> là khu du lịch sinh thái nổi tiếng với hệ thống
+              <b>hang động, sông nước và núi đá vôi</b>. Năm 2014, nơi đây được
+              <b>UNESCO công nhận là Di sản Thế giới</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="baidinh.jpg" />
+          <div class="card-content">
+            <h3>Chùa Bái Đính</h3>
+            <p>
+              <b>Chùa Bái Đính</b> là quần thể chùa lớn nhất Việt Nam, nổi tiếng
+              với <b>tượng Phật bằng đồng lớn</b> và hành lang
+              <b>500 vị La Hán</b>.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="tamcoc.jpg" />
+          <div class="card-content">
+            <h3>Tam Cốc – Bích Động</h3>
+            <p>
+              Khu danh thắng được mệnh danh là
+              <b>"Nam thiên đệ nhị động"</b>, với cảnh sắc sông nước và ruộng
+              lúa tạo nên bức tranh thiên nhiên tuyệt đẹp.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div class="food-card">
+          <img src="de-nui.jpg" />
+          <h3>Dê núi Ninh Bình</h3>
+          <p>
+            Đặc sản nổi tiếng với <b>thịt dê săn chắc</b>, thường được chế biến
+            thành <b>dê tái chanh, dê nướng và lẩu dê</b>.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="comchay.jpg" />
+          <h3>Cơm cháy Ninh Bình</h3>
+          <p>
+            Món ăn nổi tiếng với <b>lớp cơm giòn vàng</b> ăn kèm
+            <b>nước sốt thịt dê đậm đà</b>.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="mienluon.jpg" />
+          <h3>Miến lươn</h3>
+          <p>
+            Món ăn dân dã nhưng rất hấp dẫn với
+            <b>nước dùng ngọt tự nhiên</b> từ lươn.
+          </p>
+        </div>
+
+        <div class="food-card">
+          <img src="ocnui.jpg" />
+          <h3>Ốc núi</h3>
+          <p>
+            Loài ốc sống trong <b>núi đá vôi</b>, thịt giòn và có hương vị rất
+            đặc biệt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/BU9BdqmhGpU"
+        title="Video giới thiệu"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <section class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b>
+        Du khách có thể đến Ninh Bình bằng
+        <b>xe khách, ô tô hoặc tàu hỏa</b>
+        từ Hà Nội chỉ mất khoảng <b>2 giờ</b>.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b>
+        Tháng <b>5 – 6</b> là mùa lúa chín tại Tam Cốc, tạo nên khung cảnh
+        <b>ruộng lúa vàng tuyệt đẹp</b>.
+      </p>
+
+      <p>
+        Ngoài ra, mùa xuân cũng là thời điểm diễn ra nhiều
+        <b>lễ hội truyền thống</b>
+        tại các đền chùa trong khu vực.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+  </body>
+</html>

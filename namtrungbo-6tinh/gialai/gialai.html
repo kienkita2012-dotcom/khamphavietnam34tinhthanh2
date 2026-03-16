@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gia Lai – Vùng đất cao nguyên đại ngàn</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      body {
+        background: #f4fbff;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+        margin-left: 20px;
+        color: #0077b6;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #023e8a;
+      }
+
+      .hero {
+        height: 90vh;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("https://images.unsplash.com/photo-1501785888041-af3ef285b470")
+            center/cover;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 10px;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 100px auto;
+        padding: 40px;
+      }
+
+      .section h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 14px;
+        background: #0077b6;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .btn:hover {
+        background: #023e8a;
+      }
+
+      .food-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+      }
+
+      .food-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .food-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      .food-card h3 {
+        margin: 15px 10px;
+        color: #0077b6;
+      }
+
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 400px;
+        text-align: center;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      footer {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: white;
+        text-align: center;
+        padding: 35px;
+        margin-top: 80px;
+      }
+
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .food-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><b>Gia Lai</b></div>
+
+      <div>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#diadiem">Địa điểm</a>
+        <a href="#lehoi">Lễ hội</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="#dulich">Du lịch</a>
+        <a href="../../MIENTRUNG.html">Trang chính</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div>
+        <h1>Gia Lai</h1>
+        <p>Vùng đất cao nguyên hùng vĩ và văn hóa Tây Nguyên đặc sắc</p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+
+    <section id="gioithieu" class="section">
+      <h2>Giới thiệu chung</h2>
+
+      <p>
+        <b>Gia Lai</b> là một tỉnh nằm ở khu vực <b>Tây Nguyên</b> của Việt Nam,
+        nổi tiếng với những
+        <b
+          >cao nguyên rộng lớn, rừng nguyên sinh và văn hóa cồng chiêng đặc
+          sắc</b
+        >.
+      </p>
+
+      <p>
+        Tỉnh có diện tích lớn thứ hai tại Tây Nguyên, phía bắc giáp
+        <b>Kon Tum</b>, phía nam giáp <b>Đắk Lắk</b>, phía đông giáp
+        <b>Quảng Ngãi và Bình Định</b>, phía tây giáp <b>Campuchia</b>.
+      </p>
+
+      <p>
+        Gia Lai còn nổi tiếng với <b>Biển Hồ Pleiku</b>, những cánh
+        <b>rừng cà phê, cao su bạt ngàn</b> và nền
+        <b>văn hóa truyền thống của các dân tộc Jrai, Bahnar</b>.
+      </p>
+    </section>
+
+    <!-- BẢN ĐỒ -->
+
+    <section class="section">
+      <h2>Bản đồ vị trí</h2>
+
+      <iframe
+        src="https://www.google.com/maps?q=Gia+Lai&output=embed"
+        width="100%"
+        height="350"
+      ></iframe>
+    </section>
+
+    <!-- DANH LAM -->
+
+    <section id="diadiem" class="section">
+      <h2>Danh lam thắng cảnh nổi bật</h2>
+
+      <div class="cards">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+          />
+          <div class="card-content">
+            <h3>Biển Hồ Pleiku</h3>
+            <p>
+              Hồ nước tự nhiên tuyệt đẹp được gọi là
+              <b>"đôi mắt Pleiku"</b> với cảnh quan thơ mộng.
+            </p>
+
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Biển_Hồ"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff"
+          />
+          <div class="card-content">
+            <h3>Thác Phú Cường</h3>
+            <p>
+              Một trong những <b>thác nước đẹp nhất Tây Nguyên</b>
+              với dòng nước đổ xuống từ độ cao hơn 40m.
+            </p>
+
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Thác_Phú_Cường"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+          />
+          <div class="card-content">
+            <h3>Núi lửa Chư Đăng Ya</h3>
+            <p>
+              Miệng <b>núi lửa đã tắt</b> nổi tiếng với cảnh sắc thiên nhiên và
+              mùa hoa dã quỳ rực rỡ.
+            </p>
+
+            <a
+              class="btn"
+              href="https://vi.wikipedia.org/wiki/Chư_Đăng_Ya"
+              target="_blank"
+              >Tìm hiểu thêm</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LỄ HỘI -->
+
+    <section id="lehoi" class="section">
+      <h2>Văn hóa – lễ hội</h2>
+
+      <p>
+        Gia Lai là nơi lưu giữ nhiều giá trị văn hóa đặc sắc của
+        <b>các dân tộc Tây Nguyên</b>, nổi bật nhất là
+        <b>Không gian văn hóa cồng chiêng Tây Nguyên</b>
+        đã được UNESCO công nhận là
+        <b>Di sản văn hóa phi vật thể của nhân loại</b>.
+      </p>
+
+      <p>
+        Ngoài ra còn có các lễ hội truyền thống như
+        <b>Lễ hội mừng lúa mới</b>, <b>Lễ bỏ mả</b> và
+        <b>Lễ hội cồng chiêng</b> mang đậm bản sắc văn hóa bản địa.
+      </p>
+    </section>
+
+    <!-- ẨM THỰC -->
+
+    <section id="amthuc" class="section">
+      <h2>Ẩm thực đặc trưng</h2>
+
+      <div class="food-list">
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Phở khô Gia Lai',
+              'Món phở đặc biệt với hai tô: phở khô và nước dùng.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1585032226651-759b368d7246"
+          />
+          <h3>Phở khô</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Cơm lam',
+              'Cơm nướng trong ống tre mang hương vị núi rừng.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1604908176997-4311b1eab5b7"
+          />
+          <h3>Cơm lam</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup('Gà nướng', 'Gà nướng ăn cùng muối ớt và cơm lam.')
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1604908554007-8b36e2f12d70"
+          />
+          <h3>Gà nướng</h3>
+        </div>
+
+        <div
+          class="food-card"
+          onclick="
+            openPopup(
+              'Cà phê Pleiku',
+              'Cà phê nổi tiếng của vùng đất đỏ bazan Tây Nguyên.',
+            )
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+          />
+          <h3>Cà phê</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="section">
+      <h2>Video giới thiệu</h2>
+
+      <iframe
+        width="100%"
+        height="400"
+        src="https://www.youtube.com/embed/FClS4ni4zfo"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+    <!-- DU LỊCH -->
+
+    <section id="dulich" class="section">
+      <h2>Thông tin du lịch</h2>
+
+      <p>
+        <b>Cách di chuyển:</b> Du khách có thể bay đến
+        <b>sân bay Pleiku</b> hoặc đi bằng <b>xe khách</b> từ các tỉnh miền
+        Trung và Tây Nguyên.
+      </p>
+
+      <p>
+        <b>Thời gian đẹp nhất:</b> Từ <b>tháng 11 đến tháng 3</b> khi thời tiết
+        mát mẻ và mùa <b>hoa dã quỳ nở rực rỡ</b>.
+      </p>
+    </section>
+
+    <footer>
+      <p>Nguồn thông tin: Tổng hợp từ Internet</p>
+      <p>© 2026 Website khám phá các tỉnh Việt Nam</p>
+    </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+        <h3 id="popup-title"></h3>
+        <p id="popup-text"></p>
+      </div>
+    </div>
+
+    <script>
+      function openPopup(title, text) {
+        document.getElementById("popup").style.display = "flex";
+        document.getElementById("popup-title").innerText = title;
+        document.getElementById("popup-text").innerText = text;
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
